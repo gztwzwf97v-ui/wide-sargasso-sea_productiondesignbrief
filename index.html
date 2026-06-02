@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wide Sargasso Sea — Bedrock Document for Nora Mendis</title>
+<title>Wide Sargasso Sea — A Document for Nora Mendis</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 :root {
-  --ink: #0A0806;
-  --page: #EDE8DF;
-  --flame: #C44E1C;
-  --ochre: #B8882E;
-  --ash: #9A9088;
-  --ghost: #C8C0B0;
-  --thermal: #3D7A8A;
-  --deep-red: #7A1C1C;
-  --cream: #F2EDE4;
-  --maroon: #5C1A1A;
+  --ink: #0C0908;
+  --page: #E8DFD0;
   --moss: #4A5A3A;
+  --terracotta: #B5571E;
+  --clay: #A0723D;
+  --sand: #C9B68A;
+  --ash: #8F8474;
+  --ghost: #BDB096;
+  --cream: #F0E8D8;
   --sage: #7A8569;
   --indigo: #2D3850;
   --rust: #6E2818;
   --gilt: #B89540;
-  --sand: #C9B68A;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,8 +29,8 @@ html { font-size: 16px; scroll-behavior: smooth; }
 body {
   background-color: var(--ink);
   color: var(--page);
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 300;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 400;
   line-height: 1.8;
   overflow-x: hidden;
 }
@@ -43,23 +39,32 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: overlay;
 }
 
-.page { max-width: 820px; margin: 0 auto; padding: 80px 44px 140px; }
+.architectural-mark {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--terracotta) 30%, var(--clay) 50%, var(--terracotta) 70%, transparent);
+  z-index: 100;
+  opacity: 0.5;
+}
+
+.page { max-width: 840px; margin: 0 auto; padding: 90px 44px 140px; }
 
 .masthead {
-  border-top: 1px solid var(--flame);
+  border-top: 1px solid var(--terracotta);
   padding-top: 52px;
   margin-bottom: 72px;
   animation: rise 1.2s ease both;
 }
 
 .date-line {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   color: var(--ash);
@@ -68,100 +73,97 @@ body::after {
 }
 
 .stamp {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--flame);
-  margin-bottom: 36px;
+  color: var(--terracotta);
+  margin-bottom: 32px;
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
 }
 
-.film-title {
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 300;
-  line-height: 1.0;
-  letter-spacing: -0.015em;
+.doc-title {
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
   color: var(--cream);
 }
 
-.film-title em { font-style: italic; color: var(--ghost); }
+.doc-title em { font-style: italic; color: var(--sand); }
 
-.film-meta {
-  font-family: 'IBM Plex Mono', monospace;
+.doc-meta {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ash);
-  margin-top: 22px;
+  margin-top: 26px;
   line-height: 1.85;
 }
 
-.rule-short { width: 32px; height: 1px; background: var(--ochre); margin: 36px 0; }
+.rule-short { width: 44px; height: 1px; background: var(--clay); margin: 36px 0; }
 
-.intro { margin-bottom: 80px; animation: rise 1.1s 0.15s ease both; }
+.intro { margin-bottom: 72px; animation: rise 1.1s 0.15s ease both; }
 
 .to-line {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--flame);
+  color: var(--terracotta);
   margin-bottom: 22px;
 }
 
-.intro p { font-size: 1.2rem; line-height: 1.95; color: var(--ghost); max-width: 660px; }
+.intro p { font-size: 1.18rem; line-height: 1.92; color: var(--ghost); max-width: 680px; }
 .intro p + p { margin-top: 1.1em; }
 .intro strong { font-weight: 600; color: var(--cream); font-style: italic; }
-.intro a { color: var(--ochre); text-decoration: none; border-bottom: 1px solid rgba(184,136,46,0.3); }
-.intro a:hover { border-color: var(--ochre); }
 
 .premise {
-  border-left: 3px solid var(--flame);
-  border-top: 1px solid rgba(196,78,28,0.25);
-  border-bottom: 1px solid rgba(196,78,28,0.25);
+  border-left: 3px solid var(--terracotta);
+  border-top: 1px solid rgba(181,87,30,0.25);
+  border-bottom: 1px solid rgba(181,87,30,0.25);
   padding: 34px 38px;
-  margin: 0 0 80px;
-  background: rgba(196,78,28,0.04);
+  margin: 0 0 72px;
+  background: rgba(181,87,30,0.04);
   animation: rise 1.1s 0.25s ease both;
 }
 
 .premise .box-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--flame);
+  color: var(--terracotta);
   margin-bottom: 18px;
 }
 
-.premise p { font-size: 1.15rem; line-height: 1.9; color: var(--cream); font-style: italic; }
+.premise p { font-size: 1.13rem; line-height: 1.9; color: var(--cream); font-style: italic; max-width: 660px; }
 .premise p + p { margin-top: 1em; }
 .premise strong { font-weight: 600; font-style: normal; color: var(--cream); }
 
 .windward-orient {
   margin-bottom: 56px;
   padding: 24px 30px;
-  border: 1px solid rgba(184,136,46,0.3);
-  border-left: 2px solid var(--ochre);
-  background: rgba(184,136,46,0.03);
+  border: 1px solid rgba(184,149,64,0.3);
+  border-left: 2px solid var(--gilt);
+  background: rgba(184,149,64,0.03);
   animation: rise 1.1s 0.27s ease both;
 }
 
 .windward-orient .box-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ochre);
+  color: var(--gilt);
   margin-bottom: 14px;
 }
 
 .windward-orient p { font-size: 1.05rem; line-height: 1.85; color: var(--ghost); }
 .windward-orient p + p { margin-top: 0.9em; }
-.windward-orient strong { color: var(--cream); font-weight: 600; }
 
 .barbados-note {
   margin-bottom: 72px;
@@ -172,7 +174,7 @@ body::after {
 }
 
 .barbados-note .box-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -184,20 +186,37 @@ body::after {
 .barbados-note p + p { margin-top: 0.9em; }
 .barbados-note strong { color: var(--cream); font-weight: 600; }
 
-.intent-note {
+.foundations {
   margin-bottom: 80px;
-  padding: 28px 0;
-  border-top: 1px solid rgba(154,144,136,0.2);
-  border-bottom: 1px solid rgba(154,144,136,0.2);
   animation: rise 1.1s 0.3s ease both;
 }
 
-.intent-note p { font-size: 1.1rem; color: var(--ash); line-height: 1.9; font-style: italic; max-width: 640px; }
+.foundations h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 22px;
+}
+
+.foundations p { font-size: 1.1rem; line-height: 1.92; color: var(--ghost); max-width: 680px; }
+.foundations p + p { margin-top: 1em; }
+.foundations strong { color: var(--cream); font-weight: 600; }
+.foundations em { font-style: italic; color: var(--sand); }
+
+.foundations-note {
+  margin-top: 28px;
+  padding: 18px 24px;
+  border-left: 2px solid var(--sage);
+  background: rgba(122,133,105,0.05);
+}
+.foundations-note p { font-size: 1.02rem; color: var(--ghost); font-style: italic; line-height: 1.8; }
 
 .divider { margin: 56px 0; display: flex; align-items: center; gap: 18px; }
-.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: rgba(154,144,136,0.15); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: rgba(143,132,116,0.18); }
 .divider-mark {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.54rem;
   letter-spacing: 0.22em;
   color: var(--ash);
@@ -205,24 +224,24 @@ body::after {
   white-space: nowrap;
 }
 
-.section { margin-bottom: 72px; animation: rise 1s ease both; }
+.section { margin-bottom: 80px; animation: rise 1s ease both; }
 
 .section-header { margin-bottom: 28px; }
 
 .section-number {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
-  color: var(--flame);
+  color: var(--terracotta);
   letter-spacing: 0.18em;
   display: block;
   margin-bottom: 4px;
 }
 
-.section-title { font-size: 1.9rem; font-weight: 400; color: var(--cream); line-height: 1.15; }
-.section-title em { font-style: italic; color: var(--ghost); }
+.section-title { font-size: 1.95rem; font-weight: 500; color: var(--cream); line-height: 1.15; }
+.section-title em { font-style: italic; color: var(--sand); font-weight: 400; }
 
 .section-sub {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   letter-spacing: 0.14em;
   color: var(--ash);
@@ -231,18 +250,57 @@ body::after {
   display: block;
 }
 
-.section-body { font-size: 1.1rem; line-height: 1.92; color: var(--ghost); max-width: 660px; }
+.section-body { font-size: 1.1rem; line-height: 1.92; color: var(--ghost); max-width: 680px; }
 .section-body p + p { margin-top: 1em; }
 .section-body strong { font-weight: 600; color: var(--cream); }
 .section-body em { font-style: italic; }
 
 .section-body a {
-  color: var(--ochre);
+  color: var(--gilt);
   text-decoration: none;
-  border-bottom: 1px solid rgba(184,136,46,0.3);
+  border-bottom: 1px solid rgba(184,149,64,0.3);
   transition: border-color 0.2s ease;
 }
-.section-body a:hover { border-color: var(--ochre); }
+.section-body a:hover { border-color: var(--gilt); }
+
+/* Double column — theoretical / practical */
+.double-column {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(143,132,116,0.18);
+  background: rgba(255,255,255,0.012);
+}
+
+.double-column > div {
+  padding: 22px 26px;
+}
+
+.double-column > div + div {
+  border-left: 1px solid rgba(143,132,116,0.18);
+}
+
+.col-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.col-theory .col-label { color: var(--terracotta); }
+.col-practice .col-label { color: var(--gilt); }
+
+.double-column p { font-size: 1rem; line-height: 1.78; color: var(--ghost); }
+.double-column p + p { margin-top: 0.7em; }
+.double-column strong { color: var(--cream); }
+
+@media (max-width: 700px) {
+  .double-column { grid-template-columns: 1fr; }
+  .double-column > div + div { border-left: none; border-top: 1px solid rgba(143,132,116,0.18); }
+}
 
 .threads { margin-top: 22px; list-style: none; padding-left: 0; }
 
@@ -250,88 +308,62 @@ body::after {
   display: flex;
   gap: 18px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(154,144,136,0.1);
+  border-bottom: 1px solid rgba(143,132,116,0.1);
   font-size: 1.05rem;
   color: var(--ghost);
-  line-height: 1.7;
+  line-height: 1.72;
 }
 
 .threads li::before {
   content: '/';
-  color: var(--flame);
+  color: var(--terracotta);
   flex-shrink: 0;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
   margin-top: 4px;
   opacity: 0.8;
 }
 
 .threads li strong { color: var(--cream); font-weight: 600; }
-.threads li em { font-style: italic; }
 
 .threads li a {
-  color: var(--ochre);
+  color: var(--gilt);
   text-decoration: none;
-  border-bottom: 1px solid rgba(184,136,46,0.3);
+  border-bottom: 1px solid rgba(184,149,64,0.3);
 }
-.threads li a:hover { border-color: var(--ochre); }
+.threads li a:hover { border-color: var(--gilt); }
 
 .script-note {
   margin-top: 18px;
   padding: 14px 20px;
-  border-left: 2px solid rgba(196,78,28,0.4);
-  background: rgba(196,78,28,0.04);
+  border-left: 2px solid rgba(181,87,30,0.4);
+  background: rgba(181,87,30,0.04);
 }
 
 .script-note p {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.66rem;
   line-height: 1.7;
   color: var(--ash);
   letter-spacing: 0.04em;
 }
 
-.script-note p strong { color: var(--flame); font-weight: 500; }
+.script-note p strong { color: var(--terracotta); font-weight: 500; }
 .script-note p + p { margin-top: 0.7em; }
-
-.epigraph {
-  margin: 0 0 28px;
-  padding: 18px 24px;
-  border-left: 2px solid var(--deep-red);
-  background: rgba(122,28,28,0.05);
-}
-
-.epigraph p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--cream);
-  font-style: italic;
-}
-
-.epigraph .attr {
-  display: block;
-  margin-top: 8px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ash);
-  font-style: normal;
-}
 
 .provocation-box {
   margin-top: 22px;
   padding: 22px 26px;
-  border: 1px dashed rgba(184,136,46,0.4);
-  background: rgba(184,136,46,0.03);
+  border: 1px dashed rgba(184,149,64,0.4);
+  background: rgba(184,149,64,0.03);
 }
 
 .provocation-box .box-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ochre);
+  color: var(--gilt);
   margin-bottom: 12px;
 }
 
@@ -360,147 +392,15 @@ body::after {
 
 .section-pool .section-number { color: var(--sage); }
 
-.double-column {
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border: 1px solid rgba(154,144,136,0.18);
-  background: rgba(255,255,255,0.012);
-}
+.closing { margin-top: 88px; padding-top: 44px; border-top: 1px solid rgba(181,87,30,0.3); }
 
-.double-column > div { padding: 22px 26px; }
-.double-column > div + div { border-left: 1px solid rgba(154,144,136,0.18); }
-
-.col-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.56rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  display: block;
-}
-
-.col-theory .col-label { color: var(--flame); }
-.col-practice .col-label { color: var(--ochre); }
-
-.double-column p { font-size: 1rem; line-height: 1.78; color: var(--ghost); }
-.double-column p + p { margin-top: 0.7em; }
-.double-column strong { color: var(--cream); }
-
-@media (max-width: 700px) {
-  .double-column { grid-template-columns: 1fr; }
-  .double-column > div + div { border-left: none; border-top: 1px solid rgba(154,144,136,0.18); }
-}
-
-.chromatic-spine {
-  margin-top: 38px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(154,144,136,0.18);
-}
-
-.chromatic-spine:first-of-type {
-  border-top: none;
-  padding-top: 6px;
-  margin-top: 14px;
-}
-
-.spine-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.66rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--cream);
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.spine-swatch {
-  width: 13px;
-  height: 13px;
-  border: 1px solid rgba(200,192,176,0.35);
-  flex-shrink: 0;
-}
-
-.spine-binding {
-  margin-top: 50px;
-  padding: 28px 32px 30px;
-  border-left: 3px solid var(--flame);
-  border-top: 1px solid rgba(196,78,28,0.25);
-  background: rgba(196,78,28,0.05);
-}
-
-.spine-binding .spine-label { color: var(--flame); }
-
-.colour-foundation {
-  margin-bottom: 28px;
-  padding: 22px 28px;
-  border-left: 2px solid var(--ochre);
-  background: rgba(184,136,46,0.04);
-}
-
-.colour-foundation p {
-  font-size: 1.02rem;
-  line-height: 1.85;
-  color: var(--ghost);
-  font-style: italic;
-}
-
-.colour-foundation p + p { margin-top: 0.85em; }
-.colour-foundation strong { color: var(--cream); font-style: normal; font-weight: 600; }
-
-.psychic-time {
-  margin-bottom: 44px;
-  padding: 32px 36px;
-  border: 1px solid rgba(122,28,28,0.35);
-  border-left: 3px solid var(--maroon);
-  background: rgba(122,28,28,0.05);
-}
-
-.psychic-time .pt-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--maroon);
-  margin-bottom: 8px;
-  display: block;
-}
-
-.psychic-time .pt-title {
-  font-size: 1.55rem;
-  font-weight: 400;
-  color: var(--cream);
-  line-height: 1.2;
-  margin-bottom: 6px;
-}
-
-.psychic-time .pt-sub {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ash);
-  margin-bottom: 22px;
-  display: block;
-}
-
-.psychic-time p { font-size: 1.06rem; line-height: 1.92; color: var(--cream); font-style: italic; }
-.psychic-time p + p { margin-top: 0.95em; }
-.psychic-time strong { color: var(--cream); font-style: normal; font-weight: 600; }
-.psychic-time em { color: var(--cream); }
-
-.closing { margin-top: 88px; padding-top: 44px; border-top: 1px solid rgba(196,78,28,0.3); }
-
-.closing p { font-size: 1.15rem; font-style: italic; color: var(--ghost); line-height: 1.95; max-width: 620px; }
+.closing p { font-size: 1.15rem; font-style: italic; color: var(--ghost); line-height: 1.95; max-width: 660px; }
 .closing p + p { margin-top: 1.2em; }
 .closing strong { color: var(--cream); font-style: normal; font-weight: 600; }
 
 .sign { margin-top: 52px; }
 .sign .name {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -508,7 +408,7 @@ body::after {
   font-weight: 500;
 }
 .sign .date {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
   letter-spacing: 0.16em;
   color: var(--ash);
@@ -522,24 +422,25 @@ body::after {
 
 @media (max-width: 600px) {
   .page { padding: 48px 22px 100px; }
-  .film-title { font-size: 2.6rem; }
+  .doc-title { font-size: 2.3rem; }
 }
 </style>
-
 </head>
 <body>
+
+<div class="architectural-mark"></div>
 
 <div class="page">
 
 <header class="masthead">
-  <p class="date-line">Friday 1st May 2026</p>
+  <p class="date-line">Monday 27th April 2026</p>
   <div class="stamp">
-    <span>Bedrock Document</span>
+    <span>An Orientation</span>
     <span>Confidential</span>
-    <span>Draft 6 / 2026</span>
+    <span>Draft 3 / 2026</span>
   </div>
-  <h1 class="film-title"><em>Wide Sargasso Sea</em></h1>
-  <p class="film-meta">Feature Film &nbsp;/&nbsp; Prep<br>Written and Directed by Jenn Nkiru<br>An Orientation Document for Nora Mendis, Production Designer</p>
+  <h1 class="doc-title"><em>Wide Sargasso Sea</em></h1>
+  <p class="doc-meta">Feature Film &nbsp;/&nbsp; In Development<br>Written and Directed by Jenn Nkiru<br>An Orientation Document for Nora Mendis, Production Designer</p>
   <div class="rule-short"></div>
 </header>
 
@@ -550,8 +451,6 @@ body::after {
   <p>Think of this as <strong>my early thinking laid out openly</strong>, with reading and reference attached, so you can read it, push against it, contradict it, extend it, and bring back things I have not thought of yet. Everything here is provisional. The film is going to find what it needs through the work we make together.</p>
   <p>It is also worth saying directly. The film holds <strong>two perspectives, Rochester's and Antoinette's</strong>. The world looks different from each. Rochester's Caribbean is dense, hostile, sweating, watched. Antoinette's Caribbean is in harmony with her, warm, fertile, mirroring. Same locations, same objects, same light at times, but a different felt life. The audience should be able to read which world we are inside at any given moment. Hold this in your design choices throughout.</p>
   <p>And one further note for our work together. <strong>Nothing in this film should ever feel completely fully resolved, realised, or actualised.</strong> We are dealing in systems and places and people that are not ever any of those things in absolute. There is always something unfinished, something turning, something being made or unmade. Carry that into the spaces you build. Surfaces that have not quite settled. Edges that do not quite close. A room that holds itself with a slight wobble. The world of this film resists completion, and the design should resist it too.</p>
-  <p>Please note: this document occasionally folds in descriptive material from earlier drafts of the script, where the current shooting draft has trimmed those passages for page count but the descriptive intent still belongs to the world of the film. When that happens I will name it as such. These earlier-draft details are not optional flavour, they are non-negotiable design notes.</p>
-  <p>Alongside this document, please also read Darol Olu Kae's <a href="https://gztwzwf97v-ui.github.io/wide-sargasso-sea_visualresearchbrief/" target="_blank" rel="noopener">visual research brief for the film</a>. It is a wider research-and-image companion to the same world we are building, and there is real depth in there for production design to take from.</p>
   <p>You already have the script and you have lived in it. This document arrives to be read alongside your continued readings of it and alongside the research you are bringing in from your own reading and looking. The script remains the world. This document is the way I am currently entering it, offered to you as a companion to the way you are entering it.</p>
 </div>
 
@@ -577,33 +476,20 @@ body::after {
   <p>This is a real research challenge for production design and I am flagging it now because it will be the easiest thing in the world to drift into Barbadian visual defaults during prep and shoot. Jamaican great house architecture, Windward Island vernacular, Jamaican plantation garden typologies, Dominican and Saint Lucian domestic interiors are the references the design needs to keep returning to. Photographs of Barbados are not the same as photographs of Jamaica. We need to make sure the film reads Jamaican and Windward, even though the soil under our feet is Barbadian.</p>
 </div>
 
-<div class="divider"><span class="divider-mark">The Three Registers</span></div>
-
-<div class="section">
-  <div class="section-header">
-    <h2 class="section-title" style="font-size:1.5rem;">An Operating Framework</h2>
-    <span class="section-sub">How this film thinks about every scene, every object, every image</span>
-  </div>
-  <div class="section-body">
-    <p>Everything in this film is operating simultaneously on three registers. The <strong>material</strong> register: what is literally present, the dialogue on the page, the object in the room, the body in the space. The <strong>spiritual</strong> register: what the space holds beyond its surface, what is being enacted at the level of belief, protection, power, and ritual. The <strong>ancestral</strong> register: what the moment carries from what came before and what it carries forward to those who will come after. The ancestral is not only past. It is also the ancestor we are becoming for those who follow.</p>
-    <p>These three registers are never separate. Christophine's mortar is a kitchen tool (material), a site of Obeah preparation (spiritual), and an object whose form and use carry West African knowledge across the catastrophe of the Middle Passage and forward into a future that has not yet arrived (ancestral). Antoinette's white dress trailing in brown mud is a ruined garment (material), a crossing from one world into another (spiritual), and an image saturated with the history of racial categorisation in the Caribbean and with the futures it forecloses and opens (ancestral).</p>
-    <p>A musical analogy: the material is the drum, the spiritual is the bass, the ancestral is the vocal carrying across generations. The drum is the first telephone. The vocal carrying across generations is the message it transmits. Every scene has all three playing at once. Every space you build should be able to speak on all three registers at once.</p>
-    <p><strong>And the test that follows from this. Nothing should ever be sitting solely in one register, and if it is, it is not doing its best work.</strong> If a chair is doing material work alone, it is a chair. If it is doing material and spiritual and ancestral work together, it is a chair that has earned its place in this film. Apply this test across every space, every object, every surface, every choice. The Encoding section returns to the practical form of this principle.</p>
-    <p><strong>The four elements as operative presences, not symbols.</strong> Water, fire, air, earth. They are not decoration. They show up in nearly every scene as material conditions and as spiritual presences at once. Water includes the Sargasso, the natural pool, rain, sweat, the river where Christophine washes herself underwater, tears. Fire includes Coulibri burning, Thornfield burning, candles, the moths falling into flame, the hearth, the heat itself. Air includes the wind that lifts Annette's hair on the veranda, the insect hum, breath, voice, the wind on the battlements, Antoinette flying. Earth includes the mud the white dress trails through, the forest floor, the African mortar, the dirt that makes Rochester's mask, the soil itself. As you design every space, ask which elements are most active in this room, in this scene, in this moment. The elements are characters.</p>
-    <p><strong>The theoretical line and the practical line.</strong> Every choice in this film holds a theoretical argument and a material reality at once. The theoretical line is the idea, the philosophical claim, what the space means. The practical line is what that looks like in cloth, paint, plaster, wood, stone, light, sound. The two move together. When they separate the design becomes either decorative (practical without theoretical depth) or pretentious (theoretical without material conviction). I have laid out a number of sections in this document with a double column showing how the two lines hold each other. That is the rhythm I want our prep conversations to have.</p>
-    <p>Three further principles run alongside these registers and elements, and I want to name them here so they hold across every section that follows.</p>
-    <p><strong>The Remix Potential of Space.</strong> Locations and their elements can be recombined, layered, dissolved, re-edited across time and within scenes. The film's spatial logic is not literal continuity. It is resonant assembly. The remix as a form of mal-adaptation that preserves the source material's traces while transforming everything around it. This film is, in many ways, a remix of the architecture of <em>Wide Sargasso Sea</em>, of the architecture of <em>Jane Eyre</em>, of the architecture of empire itself. The spaces we build need to be able to hold this remixability without falling apart.</p>
-    <p><strong>Madness as access.</strong> What the colonial frame calls madness is, in this film, a form of perception. A doorway. A way of knowing that registers what reasonable seeing will not allow. The spaces around Antoinette have to honour her perception as legitimate. Not as illness. The room as Antoinette experiences it is the real room. Build for that reality.</p>
-    <p><strong>Voice on three planes.</strong> The film holds the spoken voice, the internal voice, and the psychic voice as three distinct registers operating at once. The spaces we build need to be able to receive all three of these voice-fields without flattening any of them. A room must be able to be a place where someone speaks aloud, a place where someone thinks, and a place where the dead, the absent, and the not-yet-arrived can be heard. Three voice-fields, one room.</p>
-    <p><strong>The tropical sublime as a contested aesthetic.</strong> Who is permitted to find this landscape beautiful, and what that permission costs. The coloniser's gaze on Caribbean nature as desire and terror operating simultaneously. Rochester's <em>"too green, too dense, too vivid"</em> is the colonial sublime breaking on its own contradictions. Antoinette's <em>"vibrant and warm"</em> is the same place rendered through belonging. Hold both in the design. The same plant matter, the same vegetation, the same set dressing. What changes is the body the camera is reading the world through. The dual perspective is the chromatic and somatic version of this contested aesthetic.</p>
-    <p><strong>The Sargasso as the central image of the film.</strong> An ocean with no shores. A place of entanglement. A sea named for seaweed whose mass beneath the surface enormously exceeds what is visible above. The film opens by descending below the Sargasso surface to find <em>"a much greater, tangled mass than that which is apparent on the surface"</em> (Scene 2). It closes with Antoinette flying above a sea that is now <em>"clear and no longer filled with sargassum"</em> (Scene 105). What appears on the surface is always the smaller part of what exists. This logic governs every space in the film. Every room is a Sargasso surface. The design is the work of attending to what is beneath.</p>
+<div class="foundations">
+  <h3>How I Want Us to Work / Two Operating Frameworks</h3>
+  <p>Two frameworks run through every part of this document. They are how I am building the world of the film and how I would love you to read every section that follows.</p>
+  <p><strong>The Three Registers.</strong> Every scene, every space, every object in this film is operating on three planes simultaneously. The <strong>material</strong> register is what the camera literally records: the texture of plaster, the weight of a chair, the fall of cloth, the dust on a windowsill. The <strong>spiritual</strong> register is what the space holds beyond what it shows: the energy of the room, the presence of what cannot be seen, the way a place feels before it is described. The <strong>ancestral</strong> register is the layered time that runs through the space, both the past it carries and the future it is becoming. The ancestral is not only what came before us. It is also what we are becoming for those who come after. The drum is the first telephone. What we make now reaches forward as much as it reaches back.</p>
+  <p>A musical analogy I think with often: the material is the drum, the spiritual is the bass, the ancestral is the vocal carrying across generations. Each space you build will be playing all three at once. Christophine's mortar is a material object (rough wood, heavy, worn), a spiritual object (the rhythm of pounding as work song and as ritual), and an ancestral object (an African form carried into the Caribbean, still speaking after the crossing). Every space and object is doing this simultaneously.</p>
+  <p><strong>The Theoretical Line and the Practical Line.</strong> For everything in this document, I want us to think on two parallel tracks. One is theoretical: what is the idea, what is the philosophical argument, what does the space mean. The other is practical: what does that look like in cloth, paint, plaster, wood, stone, what is the actual material reality. The two have to move together. When they separate is when the design becomes either decorative (practical without theoretical depth) or pretentious (theoretical without material conviction). I have laid out a number of sections in this document with a double column showing how these two lines hold each other. That is the rhythm I want our prep conversations to have.</p>
+  <div class="foundations-note">
+    <p>One more thing to hold throughout. The film is built around four elements: water, fire, air, earth. They are not symbolic. They are operative. They show up in nearly every scene as material conditions and as spiritual presences at once. Water includes the Sargasso, the natural pool, rain, sweat, the river where Christophine washes herself underwater, tears. Fire includes Coulibri burning, Thornfield burning, candles, the moths falling into flame, the hearth, the heat itself. Air includes the wind that lifts Annette's hair on the veranda, the insect hum, breath, voice, the wind on the battlements, Antoinette flying. Earth includes the mud the white dress trails through, the forest floor, the African mortar, the dirt that makes Rochester's mask, the soil itself. As you design every space, ask which elements are most active in this room, in this scene, in this moment. The elements are not background. They are characters.</p>
   </div>
 </div>
 
 <div class="divider"><span class="divider-mark">The Sections</span></div>
 
 <!-- 01 ARCHITECTURE -->
-
 <div class="section">
   <div class="section-header">
     <span class="section-number">01</span>
@@ -622,7 +508,7 @@ body::after {
       <li><strong><a href="https://www.newbeaconbooks.com/caribbean-non-fiction/folk-culture-of-the-slaves-in-jamaica" target="_blank" rel="noopener">Folk Culture of the Slaves in Jamaica</a> by Edward Kamau Brathwaite.</strong> A foundational text for thinking about post-slavery Jamaican material life. The architecture of the yard, the language of the kitchen, the spatial logic of the world the formerly enslaved made for themselves alongside and against the great house. Read it for how it thinks about space, not only for what it tells us about it.</li>
       <li><strong>Hand-coloured photographic prints from the period.</strong> See <a href="https://www.antiquemapsandprints.com/products/west-indies-an-evening-party-st-thomas-jamaica-1905-old-antique-print-p-6-026334" target="_blank" rel="noopener">An Evening Party, St Thomas, Jamaica (1905)</a> and <a href="https://www.antiquemapsandprints.com/products/west-indies-arrival-of-the-royal-mail-steamer-dominica-roseau-1905-print-p-6-026336" target="_blank" rel="noopener">Arrival of the Royal Mail Steamer, Dominica, Roseau (1905)</a> as starting points. The colour added to these prints is itself a research subject. What the colourist chose to brighten, what to leave muted, what they thought a Caribbean scene was supposed to look like to a European eye.</li>
       <li><strong>The decay of the great house after emancipation.</strong> A specific aesthetic and historical condition. Buildings that were maintained by enslaved labour and that, when that labour was withdrawn, began to slip back toward the land. The garden growing wild. The paint flaking. The roof leaking. This is Coulibri before Mason. Research how a colonial house decays in a tropical climate. What it sounds like, what it smells like, what it looks like when no one is fighting against the fact that the climate wants to take it back.</li>
-      <li><strong>Daniel's home as a specific class register, and as Obeah residue.</strong> Rural post-emancipation Caribbean domestic architecture. Single room or two-room dwelling. Corrugated metal. Hand-painted signs. Religious iconography. Worn furniture, inherited or improvised. The grandfather clock that ticks loudly, an anomaly and aspiration, a borrowed sign of a respectability that is partly real and partly performed. The "VENGEANCE IS MINE" sign on the rough corrugated wall. The chewing stick that Daniel works between teeth and fingers, a fidget object as much as a mouth one. The worn-out white singlet. <em>A small clarification on the bulge in this scene. The bulge of money belongs to Rochester, not Daniel. Daniel's eye catches the bulge of Rochester's wallet on his arrival (Scene 33), and Daniel taunts Rochester about it directly later (Scene 35: "I know there more in them pockets, your pockets swell, even though the other ting not"). The economic encounter begins as a visual one. Daniel reads the wallet before he speaks to Rochester. Hold this for staging.</em>
+      <li><strong>Daniel's home as a specific class register, and as Obeah residue.</strong> Rural post-emancipation Caribbean domestic architecture. Single room or two-room dwelling. Corrugated metal. Hand-painted signs. Religious iconography. Worn furniture, inherited or improvised. The grandfather clock that ticks loudly, an anomaly and aspiration, a borrowed sign of a respectability that is partly real and partly performed. The "VENGEANCE IS MINE" sign on the rough corrugated wall. The chewing stick that Daniel works between teeth and fingers, a fidget object as much as a mouth one. The worn-out white singlet. The bulge of money in the pocket.
       <br><br>
       <em>What follows are descriptive details from an earlier draft of the script that were trimmed for page count but always intended to come through in the actual space. I am holding them as non-negotiable design intent for Daniel's home.</em>
       <br><br>
@@ -630,7 +516,7 @@ body::after {
       <br><br>
       A table sits in the middle of the room, covered in a <strong>blood-red tablecloth</strong>. A bottle of rum and a jug of water on top of it. The cloth is the chromatic centrepiece of the room. It is also the same red Daniel later blows his nose into. The red of this cloth threads forward through the film: when Antoinette, in Scene 101, lowers her hand and lights the edge of <strong>another red tablecloth</strong> at Thornfield to begin the burn, one red answers another across continents. Daniel's red and Antoinette's red are in conversation. Hold this as a deliberate chromatic motif we are tracking.
       <br><br>
-      And then the corner. <strong>A dirty corner of the room: a mound of black earth, dead skin, and feathers, swept together but not swept away.</strong> This is not just texture. <em>It is character through space, and the production design here is doing real philosophical work.</em> The mound reads as the residue of an Obeah practice that has happened in this room, that Daniel has tried to mask but has not fully cleaned. The sweep is partial. The disposal is incomplete. <strong>The room betrays him.</strong> The mound is not a standing corner he keeps deliberately. It is the unintended evidence of practice that he thought he had hidden. It contradicts everything Daniel says aloud later in the scene about not believing in "all that devil business." He profits from informing on Christophine for being an Obeah woman, but the work has happened here too, and the evidence of it remains at his feet. The corner is the room telling Rochester what Daniel will not. The corner is the room being more honest than its inhabitant. Build it accordingly. The mound has weight, smell, history. It is what was done here that the doer thought he had cleared away.</li>
+      And then the corner. <strong>A dirty corner of the room: a mound of black earth, dead skin, and feathers, swept together but not swept away.</strong> This is not just texture. <em>It is character through space, and the production design here is doing real philosophical work.</em> The mound reads as Obeah residue, deliberately uncleaned. It contradicts everything Daniel says aloud later in the scene about not believing in "all that devil business." He profits from informing on Christophine for being an Obeah woman, while keeping his own Obeah corner unswept. He lives inside the spiritual world he is selling out. The corner is the room telling Rochester what Daniel will not. The corner is the room being more honest than its inhabitant. Build it accordingly. The mound has weight, smell, history. It belongs to the room and the room belongs to it.</li>
       <li><strong>The village called Massacre (Scene 5).</strong> A small handful of huts where the carriage gets stuck in mud and Antoinette recognises Caro. I am thinking we design this as <strong>one to two outbuilding-style huts</strong> with some African tinge to their construction, but equally rooted in their period and place. There is something quietly powerful in a "village" being only one or two huts left standing. It speaks to the ideas around the Middle Passage, about communities reduced almost to nothing, about names of places outliving the places themselves. A makeshift sign reading "Massacre" is something we should discuss. I am drawn to it but I worry it could be heavy-handed. Worth a conversation about whether the sign earns its place or whether the name gets carried only in dialogue (as it currently is in Baptiste's line).</li>
     </ul>
     <div class="script-note"><p><strong>From the script:</strong> Coulibri Plantation House (Scene 1, Scene 42-58). Granbois (Scene 7 onward). Daniel's House (Scene 37): "modest shack of a home," "grandfather clock ticks loudly," "rough corrugated wall," "VENGEANCE IS MINE" sign, "red table cloth." Christophine's outbuilding kitchen (Scene 26): the African mortar, the calabash of tomato pulp, the smoke escaping the doorway. The outbuilding where Christophine sleeps adjoining the kitchen (Scene 45).</p></div>
@@ -638,7 +524,6 @@ body::after {
 </div>
 
 <!-- 02 BACHELARD AND THE POETICS OF SPACE -->
-
 <div class="section">
   <div class="section-header">
     <span class="section-number">02</span>
@@ -700,113 +585,10 @@ body::after {
   </div>
 </div>
 
-<!-- 03 COLOUR PALETTE AND COLOUR THEORY -->
-
+<!-- 03 SHADES OF WHITE -->
 <div class="section">
   <div class="section-header">
     <span class="section-number">03</span>
-    <h2 class="section-title">Colour / <em>The Chromatic Field as Argument</em></h2>
-    <span class="section-sub">The body remembers forward, mindfulness around colour, the spines that run through the film, fire as a chromatic register</span>
-  </div>
-  <div class="section-body">
-    <div class="psychic-time">
-      <span class="pt-label">Opening Principle</span>
-      <h3 class="pt-title">The Body Remembers Forward</h3>
-      <span class="pt-sub">A note on psychic time and chromatic foreshadowing</span>
-      <p>The hammock at sunset in Scene 17, where the sky burns red, is Antoinette and Rochester's first shared evening. The first time she names being afraid of happiness. The first time she asks him to keep her secrets. The orange-red moon Antoinette sees before she flies home in Scene 103, where the script names <em>"the expansive dark sky filled with stars and a deep orange moon,"</em> is the same chromatic register returned at the moment of her freedom.</p>
-      <p>The argument is this. The red of the hammock evening is already foreshadowing the red of the burn and the red of the moon she sees before flying home, because they are the same red. Red is loaded with foreboding and freedom in the same image, way back in Scene 17. <strong>The film knew where it was going from the start.</strong> Antoinette knew, somatically, what was coming, even when she was warm in the hammock with Rochester.</p>
-      <p><strong>The body remembers forward.</strong> Colour in this film is psychic time as much as it is light. The chromatic field that follows is not a collection of moments. It is one woman's body knowing, before her mind allows the knowing, what she will become. Hold this from the start. Then read the spines.</p>
-    </div>
-    <p>Colour in this film is doing argument-work as much as composition-work. <strong>No chromatic decision in the frame is default.</strong> Every colour choice is in conversation with the three registers, with the four elements, with the dual perspective, with the ancestral and the somatic, with the Bachelardian work of the room. This section gathers the spines of colour that run through the film and asks you to hold them as a unified field rather than as a collection of accents. Each spine is a thread the audience is being trained to read, even when they do not know they are reading it.</p>
-    <div class="colour-foundation">
-      <p>A practical foundation note before the spines. <strong>Materials must be selected for how they take coloured light, not only how they read in white.</strong> The end-fire sequence in particular is built around red, orange, and yellow light used abstractly, and surfaces that read clean in daylight may go muddy or off under that light. This is close work with Bradford. We will test in prep. What follows is the chromatic field as I am currently holding it, organised by spine, closing with a binding note on fire as a register that gathers three of these spines into one.</p>
-    </div>
-
-    <div class="chromatic-spine spine-red">
-      <span class="spine-label"><span class="spine-swatch" style="background:#6E2818;"></span>Red</span>
-      <p>Red is the film's most insistent colour and the most contested. Across the work it does four interrelated things, and they accumulate.</p>
-      <p><em>One. Red as the colour of the patriarchal trap.</em> The three deep-red screen-saturation moments at three different pitches and three different bound contents (Scenes 60, 70, 77), each red a different scream. Daniel's blood-red tablecloth (Scene 37), the room where the betrayal is sold, the cloth he later blows his nose into. The red and white shapes of the Union Jack seeping through the dark blue field of the MASTER OF NONE title card (Scene 86). Red as empire and patriarchy asserting themselves over Antoinette's perception. The red of the trap closing.</p>
-      <p><em>Two. Red as the colour of bodily intimacy and bodily life.</em> The red ants on Rochester's abandoned trunk of law books (Scene 24), the land's slow biological refusal of the colonial archive. The bull's blood coffee Christophine pours from the African mortar. Antoinette's blood on the leaf she runs her tongue over to catch raindrops in the wild garden (Scene 44). Tia's stone drawing blood from Antoinette's forehead in Scene 58, "Tia cries." The cuts on Antoinette's thigh, fresh, when Christophine lifts her skirt to show Rochester the proof in Scene 79. Red as the body's refusal to be merely possessed, the body insisting on its own life.</p>
-      <p><em>Three. Red as foreboding becoming red as resistance.</em> The fire over Coulibri in Scene 1, red as origin, red as the thing that has happened before the story begins. The candle and the moth in Scene 9, the first instance of contained red-orange flame, "It's no use. More will come." The sky burning red over the hammock evening in Scene 17, red as foreboding sitting inside the same image as red as intimacy. Then, much later, the same chromatic register returns as action. The conqueror painting weeping oil through melting eyes (Scene 100). Antoinette's red tablecloth lit with precision (Scene 101). The crimson staircase (Scene 102). Antoinette cloaked in red light through the burn. The wall of fire on the battlements (Scene 103). Same red, premonition becoming action across the body of the film.</p>
-      <p><em>Four. Red as homecoming and as transcendence.</em> The orange-red moon Antoinette sees before she flies home (Scene 103, "the expansive dark sky filled with stars and a deep orange moon"). The flamboyant tree at the close of the film (Scene 105, "a dazzling flamboyant tree, covered in flaming red and orange flowers, towering over her"). Rhys's own epigraph completing itself in image: <em>"If you are buried under a flamboyant tree your soul is lifted up when it flowers."</em> Red as the colour Antoinette's soul is lifted into when she flies home.</p>
-      <p>The argument that holds these four together is this. <strong>Antoinette takes back the red.</strong> Empire's red, the patriarchal trap's red, Daniel's red of betrayal, Tia's blood-stone red of severance. Antoinette takes them all and turns them into the red of the burn that frees her, and then into the red of the flamboyant tree that lifts her home. The red Rochester used to imprison her becomes the red she flies home through. By the end of the film the audience should recognise red as Antoinette's, not as anyone else's.</p>
-      <p>Hold this practically. Daniel's blood-red tablecloth (Scene 37) and Antoinette's red tablecloth at Thornfield (Scene 101) are in deliberate dialogue. Same chromatic key, different fabrics, different drape, different weight, different histories. The crimson staircase wall colour, banister tone, surface treatment, and material finish all need to take coloured light cleanly without going garish. Antoinette's body becoming a red site through the corridor and dining room and staircase requires the materials in those rooms to hold red. Close work with Bradford throughout.</p>
-    </div>
-
-    <div class="chromatic-spine spine-green">
-      <span class="spine-label"><span class="spine-swatch" style="background:#4A5A3A;"></span>Green</span>
-      <p>Green is the dominant Caribbean colour and the place where the dual perspective is most visible at the chromatic level. <strong>Rochester's green is hostile</strong>: "too green, too dense, too vivid" (Scene 4). The land refuses him through saturation. <strong>Antoinette's green is in harmony with her</strong>: "the colours are vibrant and warm" (Scene 38), the wet leaf she runs her tongue over to catch raindrops (Scene 44), the bed of green where she and Rochester catch wild berries (Scene 16), the lush wild garden of Coulibri "every shade of green growing wild" (Scene 44). The same green seen differently is the film's whole perspective argument made chromatic.</p>
-      <p>Green is also the colour of Coco the parrot, the indigenous Caribbean vivid that gets clipped (Scene 52, Mason cutting feathers), caged, and burned (Scene 58). The flamboyant tree's leaves frame the red flowers at the end. <strong>Green as the field of life from which the red rises.</strong> Hold the same plant matter, same vegetation, same set dressing through both perspectives. The change is light, sound, framing, body. The leaves do not change. We do.</p>
-    </div>
-
-    <div class="chromatic-spine spine-black">
-      <span class="spine-label"><span class="spine-swatch" style="background:#0C0908;"></span>Black</span>
-      <p>Black in this film is doing specific work as the colour of skin, of opacity, of what cannot be possessed by colonial sight. The Atlantians' blue-black bodies rising from the sea against white surf. The second eyes opening on the closed eyelids of the Atlantians. The corner mound of black earth, dead skin, and feathers in Daniel's home (Scene 37), the Obeah residue he keeps even as he sells out the Obeah practitioner. The black mask of dirt that becomes Rochester's face when he digs in the forest (Scene 78), the precise inversion of Fanon's epidermalisation thesis: <strong>White skin, Black mask.</strong> The black screen of Scene 87, over which the Arawakan ancestor speaks: "Our rain knows all the songs. And all the tears. Listen." The black silhouettes of the women climbing the royal palms in the opening fire (Scene 1).</p>
-      <p>Black is also the colour of what is held under the surface. The deep blue of the Sargasso Sea becoming black as we drop deeper (Scene 2, "blue becomes black"). The black of the night skies the burning houses reach into. <strong>Black is the field from which everything emerges.</strong> The film respects black as an active colour, not an absence. The colour the colonial gaze cannot break.</p>
-    </div>
-
-    <div class="chromatic-spine spine-white">
-      <span class="spine-label"><span class="spine-swatch" style="background:#F0E8D8;"></span>White and Silver</span>
-      <p>White is the most worked colour in this film at the level of taxonomy. <strong>The many shades of white operating across the script are a racial classification system made material</strong>, and the design needs to hold all of them as distinct. The bleached white of newly washed linen (the river-pool washing scene, Scene 39). The sun-yellowed white of fabric dried in Caribbean heat. The grey-white of mildew in a humid house. The blue-white of the snow-packed window at Thornfield (Scene 98, "a white square, nothing beyond"). The chalk-white of the love potion powder on the floor (Scene 61). The bone-white of the moth's body (Scene 9). The ash-white of a cockroach. The white of Antoinette's wedding nightgown trailing in mud (Scene 6). The white of the corset Rochester laces himself into (Scenes 81, 86). The Atlantians rising blue-black against white surf.</p>
-      <p>White is colonial classification, white is ritual, white is imprisonment (the snow-packed window), and white is transcendence (the Atlantians' light). This is also the cleanest worked example of how encoding operates across the film. The Encoding section that follows holds the worked example. This Colour section holds the chromatic field.</p>
-      <p><strong>Silver belongs in the same family but does specific work of its own. Two groupings.</strong></p>
-      <p><em>One. Silver in the Caribbean as elemental.</em> The silver rocks at the natural pool (Scene 14, "blue-black water, surrounded by silver rocks and vivid purples and greens"). Silver as something the land already holds. Stone-light, water-light, the silvery underside of leaves, moonlight. <strong>Caribbean silver belongs to the place.</strong> It is not accumulated and it is not contested. The pool is the cleanest example.</p>
-      <p><em>Two. Silver as the civilising tool.</em> The silverware at Thornfield. The sideboards laden with silver. The fork and the knife and the soup tureen and the cake stand and the gravy boat. Silver as the imperial argument that says <strong>this is how civilised people eat, not with the hand from a calabash, not with the body in direct contact with the food</strong>. Empire's silver is the technology of separating the body from its meal. It is the chromatic and material counter-argument to Christophine's calabash of tomato pulp on the floor (Scene 26), to the roast plantain Tia and Young Antoinette eat with their hands at the pool (Scene 46), to the bull's blood coffee from the African mortar. The silverware tradition is the technology of civilising as colonial method, present and witnessing in the dining room that burns. Design the silver service of Thornfield as a coherent group, with the argument legible.</p>
-    </div>
-
-    <div class="chromatic-spine spine-yinyang">
-      <span class="spine-label"><span class="spine-swatch" style="background:linear-gradient(90deg,#0C0908 50%,#F0E8D8 50%);"></span>Black and White / Yin and Yang</span>
-      <p>Beyond colour, black and white in this film are the names of an energetic and philosophical binary that has structured the whole world we are building. <strong>Light and dark. Knowing and not-knowing. Seen and unseen. Possessor and possessed. Scopic certainty and what refuses to be looked at.</strong> By the end of the film, the binary is collapsing, and the collapse happens on screen, not only in implication.</p>
-      <p>Listen to Christophine. Scene 70, Christophine as apparition leading Antoinette out of the room: "Shut your eyes any way you want... But we still here." Scene 80, the confrontation with Rochester. Rochester, with emotion: "I would give my eyes never to have seen this place." Christophine, turning back to him with purpose: "And that's the first damn word of truth you speak. <strong>You choose what you give.</strong>" He literally offers his eyes, and Christophine accepts the offer.</p>
-      <p>The offering is taken at his word, and the film does not wait for the Brontë future to register it. It happens in this script, audible, at the climax. Scene 103, the battlements, the wall of fire behind Antoinette, the orange moon above her. Rochester's voice comes through the flames: <em>"Bertha, please, I can't see. I can't see!!"</em> The seeing-as-power that has structured the whole colonial regime fails him in real time. He becomes, at the moment of her freedom, a man who must be led. The eye-offering of Scene 80 is honoured here.</p>
-      <p>And then the visual climax of the inversion, immediately before she jumps. <em>"The screen saturates, as if shot on thermal camera. ROCHESTER is a white silhouette against a darker background. Slowly the darker background turns to white, swallowing him up. He disappears."</em> The black-and-white binary inverts on screen: white figure on dark, then dark turning to white, then the figure swallowed entirely into the white field. <strong>The colour of imperial classification swallows the man who held it.</strong> White as the field that takes him in the same way it took Antoinette in the snow-packed window of the attic, but with the polarity reversed. He becomes what she was made to be.</p>
-      <p>The binary inverts at the design level throughout the end. Antoinette in white at the height of her power, holding fire. The corridor of imperial portraits going up in flame, the conqueror's painted eyes weeping oil before they melt. The black-and-white of Rochester's dress returning at the end as his world is taken from him. <strong>The yin and yang are not opposites. They are two sides of the same field, the field beginning to turn.</strong> Hold this not just chromatically but as an energetic framing. The end of the film should feel, at the level of design, like a structure inverting itself.</p>
-    </div>
-
-    <div class="chromatic-spine spine-blue">
-      <span class="spine-label"><span class="spine-swatch" style="background:#2D3850;"></span>Blue and Blue-Black</span>
-      <p>Blue is the colour of depth in this film. The Sargasso Sea (Scene 2, "sea water fills the screen, deep blue," then "we drop deeper and deeper, blue becomes black"). The deep blue of the natural pool at Granbois (Scene 14, "blue-black water"). The blue-black sky of Coulibri burning (Scene 1, "flames reach up and engulf the blue-black sky"). The dark blue background of the "MASTER OF NONE" title card. The Atlantians' blue-black bodies. The night skies. The starlit sky above the cliff in Scene 103, "the expansive dark sky filled with stars and a deep orange moon."</p>
-      <p>Blue is the colour of the unconscious, of what is held under the surface. The Sargasso seaweed itself as "a much greater, tangled mass than that which is apparent on the surface." <strong>Blue is what is beneath.</strong> Hold this in the design: water-rooms, night-rooms, dream-rooms read in the blue-black register. The hottest part of the flame is also blue, which is one of the reasons blue belongs in the fire register at the close of this section.</p>
-    </div>
-
-    <div class="chromatic-spine spine-orange">
-      <span class="spine-label"><span class="spine-swatch" style="background:#B5571E;"></span>Orange and Amber</span>
-      <p>Orange is Antoinette's specific colour of seduction, ritual, and refusal. The orange flowers strewn along the paved road in the forest (Scene 31, the path Antoinette walks for Rochester). The orange flowers Antoinette places around the bed in her ritual offering to Rochester (Scene 34). The amber light Christophine is silhouetted in when she bursts in to wake Young Antoinette after Annette's collapse (Scene 56). The orange-red moon before the flight home (Scene 103). The oil lantern light on the Granbois veranda. The candlelight throughout.</p>
-      <p><strong>Orange is the colour of women's offerings and women's warnings.</strong> It is the colour of intention. Ritual orange is different in temperature from the abstracted fire-orange of the Thornfield burn, though they speak to each other across the film. Hold them as related but not identical.</p>
-    </div>
-
-    <div class="chromatic-spine spine-gold">
-      <span class="spine-label"><span class="spine-swatch" style="background:#B89540;"></span>Gold</span>
-      <p>Gold is contested ground in this film. <strong>The same metal worn by the colonial accumulators and by the woman whose ancestors made the goldsmithing tradition that produced it.</strong> The gilt frames, the gilded portraits, the gold candelabras of Scene 101, the gold plates and gold cutlery and gold-rimmed glasses, the heavy English silver-gilt commissioned by sugar barons returning from Jamaica with new fortunes. And, on the other side, Christophine's heavy gold earrings (Scene 11), hand-worked in a tradition that long predates colonial extraction, carried close to the body as a present continuation of an ancestral practice from the Gold Coast (Ghana) and the Akan peoples.</p>
-      <p>One gold is theft made into object. The other is what survived the Middle Passage worked into form. Both golds are in the film. They are not the same gold. The design must hold them as distinct in their material logic even when they share a chromatic family. They argue with each other across the entire arc of the work.</p>
-    </div>
-
-    <div class="chromatic-spine spine-brown">
-      <span class="spine-label"><span class="spine-swatch" style="background:#A0723D;"></span>Brown / Mud / Earth</span>
-      <p>Brown is the colour of the land's mark on the body and of contamination from one register to another. Antoinette's white wedding nightgown trailing in mud (Scene 6). Christophine's dress trailing brown at the hem (Scene 11). The brown footprints Young Antoinette leaves on the white veranda (Scene 47). The brown gravy of the English food at both Coulibri and the attic. The brown earth of Daniel's Obeah corner (Scene 37). Rochester's dirt-mask in Scene 78, the moment of the Fanon inversion.</p>
-      <p><strong>Mud on a white dress is shame in one reading and sacrament in another.</strong> The colonial system reads dirt as contamination. The indigenous and African systems read it as belonging, the body in the right relationship to the ground. The film holds both readings without resolving them. Hold this in the design of finishes. Worn wood that has been sat on, eaten at, slept against for generations. Brown as the colour of presence, not the colour of decline.</p>
-    </div>
-
-    <div class="chromatic-spine spine-titlecards">
-      <span class="spine-label"><span class="spine-swatch" style="background:linear-gradient(90deg,#2D3850 50%,#6E2818 50%);"></span>The Title Cards</span>
-      <p>The script names four chapter title cards punctuating the film. THEY ALL KNEW (Scene 3 end), QUI EST LA? (Scene 41 end), WE LOST OUR WAY TO ENGLAND (Scene 88 end), and MASTER OF NONE (Scene 86). The colour palette of the cards as a whole is an open question for art direction, to be resolved later when we are working with the totality of the film, but worth holding in mind from the start of design conversations.</p>
-      <p>Of the four, MASTER OF NONE carries the only explicit colour direction in the script: <em>"is written across a dark blue background. Slowly, the red and white shapes of the Union Jack seep through the blue."</em> That seep is doing precise chromatic work. Red and white seeping through dark blue is empire asserting itself through the field that holds what is beneath. The colours of the colonising flag becoming visible inside the colours of what lay beneath the surface, in the same chromatic register as the Sargasso seaweed beneath the water (Scene 2, the much greater tangled mass than that which is apparent on the surface). <strong>The MASTER OF NONE card is a small chromatic version of the film's whole argument.</strong> The other three cards' palettes will be resolved in post, but their typography, materiality, and chromatic relationship to MASTER OF NONE will all benefit from being thought through alongside the larger field this section lays out.</p>
-    </div>
-
-    <div class="spine-binding">
-      <span class="spine-label"><span class="spine-swatch" style="background:linear-gradient(90deg,#2D3850 0%,#6E2818 45%,#B5571E 75%,#B89540 100%);"></span>Fire as a Chromatic Register</span>
-      <p>A binding note to close. Three of the spines above (red, orange, blue) are also the colours of fire. <strong>Fire is not just an event in this film. It is a chromatic register that runs through the whole work and surfaces in many places where literal flame is not present.</strong></p>
-      <p>Red is the surface-colour of the burn we see. Orange is the heat-colour at the centre. Blue is the hottest part of the flame, the part that goes invisible and clean, and it is also the colour of the sky the Coulibri flames reach into ("flames reach up and engulf the blue-black sky," Scene 1). The film's end-fire sequence (Scenes 100 to 103) is built precisely around abstract red, orange, and yellow light, doing the work that physical fire would do at higher budget. But blue is in there too: the night sky behind the battlements, the deep blue holding the staircase ascent, the blue-black moment before the orange moon resolves over the cliff.</p>
-      <p>Hold fire as a colour family across the film. Coulibri burning (Scene 1). The candle and the moth (Scene 9). The hammock evening with the burning sky (Scene 17). The deep-red screen-fillers (Scenes 60, 70, 77). The whole end-fire sequence (Scenes 100 to 103). The orange-red moon (Scene 103). The flamboyant tree's red flowers at the homecoming (Scene 105). <strong>The fire register binds the chromatic field of the film. Antoinette is, by the end, a woman who has taken the colours of fire and made them her own.</strong></p>
-    </div>
-  </div>
-</div>
-
-<!-- 04 SHADES OF WHITE / ENCODING -->
-
-<div class="section">
-  <div class="section-header">
-    <span class="section-number">04</span>
     <h2 class="section-title">Encoding / <em>Shades of White and Other Material Provocations</em></h2>
     <span class="section-sub">How theoretical ideas become physical decisions in the world of the film</span>
   </div>
@@ -816,7 +598,7 @@ body::after {
     <div class="provocation-box">
       <p class="box-label">Provocation One / Shades of White</p>
       <p>The many shades of white operating across this film are <strong>a racial taxonomy made material</strong>. The bleached white of newly washed linen. The sun-yellowed white of fabric dried in Caribbean heat. The grey-white of mildew in a humid house. The blue-white of snow at Thornfield. The chalk-white of powder on the floor after Antoinette's love potion. The bone-white of a moth's body. The ash-white of a cockroach that has crawled through powder. The white of Antoinette's wedding nightgown. The white of the corset Rochester laces himself into. Each white is a different relationship to colonial classification, to labour, to climate, to time.</p>
-      <p>Build out a complete chromatic vocabulary of whites for the film. The same word for many different colours. This is the model for how everything else gets encoded. <em>The white spine is worked at full length in Section 03 / Colour, alongside silver, black, the yin and yang of black and white together, and the rest of the chromatic field. Read the two sections in dialogue.</em></p>
+      <p>Build out a complete chromatic vocabulary of whites for the film. The same word for many different colours. This is the model for how everything else gets encoded.</p>
     </div>
     <div class="provocation-box">
       <p class="box-label">Provocation Two / The Spoils Of Empire as Surface</p>
@@ -847,11 +629,10 @@ body::after {
   </div>
 </div>
 
-<!-- 05 OBJECTS, EPHEMERA, INTERIORS -->
-
+<!-- 04 OBJECTS, EPHEMERA, INTERIORS -->
 <div class="section">
   <div class="section-header">
-    <span class="section-number">05</span>
+    <span class="section-number">04</span>
     <h2 class="section-title">The Material World / <em>Objects, Ephemera, Interiors</em></h2>
     <span class="section-sub">The things the camera holds, the things the body touches</span>
   </div>
@@ -880,37 +661,32 @@ body::after {
   </div>
 </div>
 
-<!-- 06 INDIGENOUS PRESENCE AND TAÍNO TRACES -->
-
+<!-- 05 INDIGENOUS PRESENCE AND TAÍNO TRACES -->
 <div class="section">
   <div class="section-header">
-    <span class="section-number">06</span>
+    <span class="section-number">05</span>
     <h2 class="section-title">Indigenous Presence / <em>Taíno, Arawak, Carib Traces</em></h2>
     <span class="section-sub">What was there before, and is still there in the residue</span>
   </div>
   <div class="section-body">
     <p>The Caribbean was not empty before the colonisers arrived. The Taíno, the Arawak, and the Kalinago (Island Caribs) inhabited these islands for centuries before European contact. The script holds a specific space for this in Scene 87, where an Arawakan-speaking ancestor speaks over black: "Our rain knows all the songs. And all the tears. Listen." This is the spiritual hinge of the film. Indigenous presence is not historical curiosity here. It is the deep ground beneath everything.</p>
     <p>For your design, indigenous traces are not decorative additions. They are the underlayer. The Caribbean as a place that was named, mapped, walked, sung, and made sacred long before the colonial period the film is set in. What remains in the soil, in the place names, in the food, in the rain. Research indigenous Caribbean material culture not for surface motifs but for the deeper logics that survive. The forms persist even when the people are absent or invisibilised.</p>
-    <p>Two concepts I work with travel together at this layer of the film, and I want to name them explicitly before the threads list that follows. <strong>Cosmic Archaeology, AND THE MISSING.</strong> Side by side, neither subsumed under the other. <em>THE MISSING</em>, drawing on Arthur Jafa's articulation, is the recognition that we cannot fully quantify what was lost in the colonial rupture, because we do not know the full scope of what was taken. The negative space of Black and indigenous experience: the unregistered, the unrecorded, the unwritten, the things that never made it onto any archive's shelf. <em>Cosmic Archaeology</em> is my own coined practice for working with that absence. The fragments that remain are dusted off and treated as still-active transmissions rather than finished remnants, then assembled not into false completeness but into a more honest form of knowing.</p>
-    <p>Indigenous Caribbean cultures are one of the clearest fields for this practice. So much was destroyed, so quickly, that what survives are partial traces. Half-known forms. Names of places. Words that survived in Creole languages. Foods that crossed into Caribbean cuisine. Hammock and calabash forms still in use. The forest floor in this film is on top of indigenous burial grounds. The natural pool is on a sacred site. The food Christophine cooks contains indigenous staples. <strong>The design should know this even when no scene explicitly states it.</strong> Build with these two concepts running underneath every Caribbean exterior, every interior, every object: what is here now is the visible part of a much greater field that the colonial archive could not capture.</p>
     <ul class="threads">
       <li><strong>Taíno zemis.</strong> Sacred objects, ancestor figures, small carved presences that mediated between the human and the spirit world. Three-pointed stones. Wooden carvings. Cohoba paraphernalia. The zemi as a category of the sacred that is older than Obeah and that flows into Obeah at certain points. Research the Smithsonian, British Museum, and Jamaican National Gallery collections of Taíno zemis. Their forms can inform objects in Christophine's space, in the forest, in the natural pool, without ever being labelled or explained.</li>
       <li><strong>Arawak and Taíno material culture in general.</strong> Calabashes, hammocks, tobacco, cassava, cohiba (pottery), the duho (the carved wooden seat reserved for spiritual leadership). Some of this becomes Caribbean domestic culture across all later eras. The hammock that Antoinette and Rochester curl in at Granbois is a Taíno form.</li>
       <li><strong>Kalinago (Island Carib) culture.</strong> The Windward Islands, especially Dominica, were Kalinago territory. The Massacre village in Scene 5 is in Dominica historically and the indigenous presence in the Windward Islands is more direct than in Jamaica. Research the surviving Kalinago Territory in Dominica.</li>
       <li><strong>Pre-Columbian rock carvings (petroglyphs) in Jamaica and the Caribbean.</strong> Mountain River Cave in Jamaica. Caves and rock formations across the islands carrying carved figures, spiral motifs, ancestor faces. These forms can inform texture and surface in unexpected places. The rocks around the natural pool. The walls of caves we may or may not see. The patterns on Christophine's calabash.</li>
-<li><strong>Wilson Harris, <em>Palace of the Peacock</em> (1960).</strong> The Guyanese rainforest as interior journey, historical haunting, and consciousness expanding beyond ordinary perception. Direct reference for how the forest in our film is doing more than topographical work. The forest as the place where time collapses, where the dead walk, where perception exceeds the colonial real. Read alongside the Granbois forest sequences and the Atlantians.</li>
-      <li><strong>Colonial cartography and what is erased in the act of mapping.</strong> How land was named, divided, surveyed, and represented. The relationship between naming a place and claiming it. Maroon hideouts unmarked on plantation surveys. Indigenous place names overwritten with English and French. The "Massacre" village in Scene 5 carries its own history in its name. Research colonial Caribbean cartography for what it shows and especially for what it could not see. The design should know the names that were lost.</li>
-      <li><strong>Vusamazulu Credo Mutwa</strong> as a thinker and reference. The Zulu sanusi who held vast pan-African and pan-human cosmological knowledge. His written works <a href="https://www.penguinrandomhouse.co.za/book/indaba-my-children-african-tribal-history-legends-customs-and-religious-beliefs/9780862417581" target="_blank" rel="noopener"><em>Indaba My Children</em></a> and <a href="https://search.worldcat.org/title/africa-is-my-witness/oclc/51553" target="_blank" rel="noopener"><em>Africa Is My Witness</em></a> are vast repositories of mythic and ancestral material. He is not Caribbean, but his approach to the survival of fragments and the active transmission of cosmological knowledge across erasure is directly applicable here.</li>
+      <li><strong>Cosmic Archaeology, AND THE MISSING.</strong> Two concepts I work with that travel together, side by side, neither subsumed under the other. <em>THE MISSING</em>, drawing on Arthur Jafa's articulation, is the recognition that we cannot fully quantify what was lost in the colonial rupture because we do not know the full scope of what was taken. The negative space of Black and indigenous experience: the unregistered, the unrecorded, the unwritten. <em>Cosmic Archaeology</em> is my own coined practice for working with that absence. The fragments that remain are dusted off and treated as still-active transmissions rather than finished remnants, then assembled not into false completeness but into a more honest form of knowing. Indigenous Caribbean cultures are one of the clearest fields for this practice. So much was destroyed, so quickly, that what survives are partial traces, half-known forms, names of places, words that survived in Creole languages, foods that crossed into Caribbean cuisine. The forest floor in this film is on top of indigenous burial grounds. The natural pool is on a sacred site. The food Christophine cooks contains indigenous staples. The design should know this even when no scene explicitly states it.</li>
+      <li><strong>Vusamazulu Credo Mutwa</strong> as a thinker and reference. The Zulu sanusi who held vast pan-African and pan-human cosmological knowledge. His written works <em>Indaba My Children</em> and <em>Africa Is My Witness</em> are vast repositories of mythic and ancestral material. He is not Caribbean but his approach to the survival of fragments and the active transmission of cosmological knowledge across erasure is directly applicable here.</li>
     </ul>
     <div class="script-note"><p><strong>From the script:</strong> Scene 87 is the Arawakan ancestor voice. Black screen. Subtitles only. Rain and water. "Our rain knows all the songs. And all the tears. Listen." This scene is not designed as an interior space, it is a sonic and elemental opening, but the indigenous presence it names runs underneath every Caribbean exterior in the film. Carry that knowledge into the design even where it is not foregrounded.</p></div>
   </div>
 </div>
 
-<!-- 07 THE NATURAL POOL -->
-
+<!-- 06 THE NATURAL POOL -->
 <div class="section section-pool">
   <div class="section-header">
-    <span class="section-number">07</span>
+    <span class="section-number">06</span>
     <h2 class="section-title">The Natural Pool / <em>A Found Place, Not a Built One</em></h2>
     <span class="section-sub">Sacred site, water as memory, the body of water that knows Antoinette</span>
   </div>
@@ -938,77 +714,22 @@ body::after {
       <li>The pool as a body of water that knows Antoinette and refuses Rochester. In Scene 21, when he is alone in it, the water "gently quivers as if something were underneath." The pool is reading him. Build the location so that this reading is plausible. Depth, darkness, the suggestion that something is there under the surface even when nothing is.</li>
       <li>The pool at Coulibri (Young Antoinette and Tia in Scene 46) and the pool at Granbois (Antoinette and Rochester throughout). They are not literally the same body of water but they are the same kind of body of water. Antoinette flying home at the end recognises both at once. Pool as continuous spiritual site across the film.</li>
       <li>The river or river-pool of Scene 39 (the white linen washing, the water drumming, Christophine leading the work song). A different sonic and spiritual register than the Granbois pool but in the same elemental family. Slow water, sittable rocks, light through trees, space for a group of women in audible relationship with the water and each other.</li>
-      <li><strong>Derek Walcott on Caribbean landscape, water, and history.</strong> <em>The Sea is History</em> in particular. The sea as archive, as the place where the unrecorded dead are held. The pool in our film is not the sea, but it is in the sea's lineage. A blue-black body of held water sitting in the forest is, on the deepest spiritual register, a smaller version of the sea that holds everyone the colonial archive could not record. Read Walcott alongside the design of this scene. The pool is local. It is also archival.</li>
     </ul>
     <div class="script-note"><p><strong>From the script:</strong> Scene 14: "blue-black water, surrounded by silver rocks and vivid purples and greens." Scene 19: Rochester and Antoinette lying in the middle of the pool, "marooned." Scene 21: water gently quivers, dub vibration. <strong>Scene 39: the river/river-pool, the women washing white linen, Christophine leading a work song, the rhythmic sound of water drumming building as Antoinette approaches.</strong> Scene 46: Young Antoinette and Tia, the breath-holding game. Scene 105 (the final image): "the pool at Granbois, still and fresh." All natural water sites, recurring across both timelines, loci of homecoming.</p></div>
   </div>
 </div>
 
-<!-- 08 THE OUTBUILDINGS AND THE WORKING WORLD -->
-
+<!-- 07 THE CARIBBEAN: MINIMALIST ACHRONOLOGICAL -->
 <div class="section">
   <div class="section-header">
-    <span class="section-number">08</span>
-    <h2 class="section-title">The Outbuildings / <em>The World the Servants Made</em></h2>
-    <span class="section-sub">Kitchens, sleeping rooms, river, what happens around and beyond the great house</span>
-  </div>
-  <div class="section-body">
-    <p>The outbuildings are the spaces of life that the great house pretends do not exist. Christophine's kitchen and adjoining sleeping room. The servants' quarters. The kitchen yard. The path to the river. These are the spaces where the actual labour of feeding, washing, clothing, healing, and raising children happens. They are also the spaces where the spiritual life of the house lives most freely, because the colonial gaze does not enter them.</p>
-    <p>Design these spaces with the same care as the great house, and probably with more love. They are where the film is most alive. Brathwaite's <em>Folk Culture of the Slaves in Jamaica</em> is the best single text for thinking about these spaces.</p>
-    <ul class="threads">
-      <li><strong>Christophine's kitchen at Granbois (Scene 26).</strong> The mortar, the calabash, the smoke escaping the doorway. Tools hung from beams. Bunches of herbs drying. A simple hearth. A clay floor. The smoke that obscures her at first when Rochester approaches. Build this space as a working kitchen that has been worked in for years, by someone who knows where everything lives.</li>
-      <li><strong>Christophine's sleeping room (Scene 45).</strong> The small adjoining room. Soft glow in the deep night. A bed. A few personal objects. A space where she rocks Young Antoinette and sings her a Caribbean lullaby. This room is the warmest space in the film. Build it that way. Things on the walls. Something hanging at the window. Soft cloth. Things that have been with her a long time.</li>
-      <li><strong>The path through the woods to Christophine's house (Scene 40).</strong> "Billowing sheets hang nearby, obscuring and mystifying her view." This is not Granbois. This is Christophine's own world. A small house with sheets drying on lines outside, a mango tree, a place where she sits on the ground with the calabash and the cigar. The architecture is informal, the line between inside and outside porous. Build this as an Afro-Caribbean domestic space rather than a colonial one.</li>
-      <li><strong>The river where the women wash linen (Scene 39).</strong> One of the most sonically and spiritually charged locations in the film. A group of women washing white linen in a river while Christophine leads a work song. The water itself becomes a percussive instrument: <strong>water drumming</strong> that builds as Antoinette approaches. The river is doing several things at once: it is the site of communal labour, the site of a spiritual rhythm that predates and survives colonial structures, and a literal sonic event. Find a river location that can hold all of this. Slow water, rocks the women can sit on or beat the linen against, light breaking through trees overhead, space enough for a group of women to be in audible relationship with each other and with the water.</li>
-      <li><strong>The river where Christophine washes herself (Scene 76).</strong> A different beat. Christophine alone. White sarong, gold jewellery. Slow ritual washing. She lowers herself underwater and screams into the water. King Tubby deep dub. This is a sacred site. The same river or a different one, but a place that holds her ritual.</li>
-      <li><strong>The outbuilding kitchen at Coulibri (Scene 45).</strong> A different kitchen, in Antoinette's childhood. Christophine and Young Antoinette in a soft glow at night. Build this as the architectural ancestor of the Granbois kitchen. The same logic, the same kind of space, an earlier version.</li>
-      <li><strong>Daniel's home (Scene 37).</strong> Already discussed in Section 01 but worth pulling forward here too. A small modest home that lives in the same spatial register as the outbuildings, even though Daniel is not a servant. His house is the rural post-emancipation Caribbean reality that Granbois pretends not to see. The grandfather clock, the corrugated wall, the "VENGEANCE IS MINE" sign, the red tablecloth. Design it as the visible truth that the great house is constantly displacing.</li>
-    </ul>
-    <div class="script-note"><p><strong>From the script:</strong> Scene 26 (Christophine's kitchen at Granbois with the mortar). Scene 39 (the river and the linen washing). Scene 40 (the path to Christophine's house, the mango tree). Scene 45 (the outbuilding at Coulibri, soft glow, the lullaby). Scene 73 (the Cook fleeing the cursed place). Scene 76 (Christophine's ritual underwater wash).</p></div>
-  </div>
-</div>
-
-<!-- 09 EXTERIORS, GARDENS, FOREST -->
-
-<div class="section">
-  <div class="section-header">
-    <span class="section-number">09</span>
-    <h2 class="section-title">Exteriors / <em>Gardens, Forests, the Land Itself</em></h2>
-    <span class="section-sub">What the camera sees outside, what the body moves through</span>
-  </div>
-  <div class="section-body">
-    <p>The exteriors of this film are doing as much work as the interiors. The Coulibri garden, the path between the house and the village, the hidden pool, the heart of the forest, the mountain ridge Granbois sits on, the Thornfield drive lined with oaks. The exterior design is closer to landscape design and natural site management than to set construction, but it requires the same level of philosophical attention.</p>
-    <p><strong>The Caribbean landscape in this script is not backdrop. It is participant.</strong> Rochester looks out of the carriage window and sees green that is "too green, too dense, too vivid." Antoinette walks through the woods and "plants and trees yield to her passage." The forest swallows a road whole. The pool is "blue-black water surrounded by silver rocks." The garden at Coulibri is "every shade of green growing wild." This landscape has its own agency. Design it that way. Three principles to hold across every exterior beat:</p>
-    <p><strong>Density, saturation, and sensory pressure as their own form of consciousness.</strong> Overgrowth, heat, soil, decay, and bloom as simultaneous and inseparable states. The Caribbean does not separate growing and dying, blooming and decomposing, into different seasons. They are happening at once, in the same square foot of forest floor. The dressing of every exterior should hold that simultaneity. Excess as cognition.</p>
-    <p><strong>Botanical specificity is doing spiritual and pharmacological work, not decorative work.</strong> Royal palms (the women climb them at Coulibri burning, Scene 1). Flamboyant trees (the homecoming, Scene 105). Jasmine (Young Antoinette runs her tongue over a jasmine leaf to catch raindrops, Scene 44). Octopus orchid (the bell-shaped mass of white, mauve, deep purple in the Coulibri garden, Scene 44). Tree ferns. Mango (Scene 5, where Rochester, Antoinette and Baptiste shelter from rain). Guava. Sargassum. Each plant in this script carries spiritual and pharmacological resonance beyond its name. Research it as material culture, not as set dressing. The botanical world is a witness in this film.</p>
-    <p><strong>The plantation landscape is psychological space.</strong> The built geography of slavery persists long after its formal end. Ruined great houses, overgrown cane fields, paths that disappear back into forest. Scene 31 where Rochester finds a paved road with orange flowers that vanishes when he turns around is doing precise work at this register. The land remembers what was done on it. Ground is not neutral.</p>
-    <ul class="threads">
-      <li><strong>The Coulibri garden (Scene 44).</strong> Wild and overgrown. Every shade of green. Vivid red, yellow, orange flowers shimmering. Towering tree ferns. The octopus orchid (white, mauve, deep purple). Jasmine leaves Young Antoinette runs her tongue over to catch raindrops. This is the garden that has gone wild because the labour that maintained it was withdrawn after emancipation. <strong>The wildness is the truth of freedom.</strong> The wildness is not neglect. It is liberation. Research Caribbean garden plants in their wild state, particularly Jamaican mountain garden flora. Octopus orchids, flamboyant trees, jasmine, hibiscus, frangipani, allamanda. The flamboyant tree is critical: Antoinette flies home to one in the final scene.</li>
-      <li><strong>The same garden after Mason arrives.</strong> Pancake-slugs lined up along manicured flowerbeds, salt killing them. The garden returned to colonial order is the garden's death. The earlier wildness is the garden's life. Both states need to be designed.</li>
-      <li><strong>The path between Coulibri house and the surrounding land.</strong> The route Young Antoinette takes when the children chase her with their song in Scene 44. The undergrowth that scratches her legs. The light declining as she goes deeper. This is a path through the half-tamed half-wild land.</li>
-      <li><strong>The heart of the forest (Scenes 31, 32, 63, 78).</strong> The dense, dark, hostile-to-Rochester / welcoming-to-Antoinette space at the centre of the film's geography. The paved road that appears for Rochester and then vanishes. The orange flowers strewn along it. The ruined house in the distance that morphs into spectral colonial architecture. The same forest where the Atlantians walk. The same forest where Rochester digs and acquires his black mask of dirt. <strong>The forest is the place where the film's spiritual truth is most concentrated.</strong> Find a real forest location that can hold all of these registers. Light filtering down. Towering canopy. A clearing or two. Paths that can be made and unmade by the camera and the dressing.</li>
-      <li><strong>The mountain ridge Granbois sits on.</strong> "Entirely isolated high in the mountains." The relationship of house to surrounding landscape is part of the design. Granbois is an English summer house dropped into Caribbean mountain terrain. The architectural mismatch is the visible argument. <strong>Worth us going through our scouted sites and houses together to find what gets us closest to this</strong>, and considering what supplementary build or dressing might be required to push the location into the right relationship with the surrounding land.</li>
-      <li><strong>The mango tree in Scene 5.</strong> Where Rochester, Antoinette, Baptiste, and the coachman shelter from the rain. A mango tree of significant age, its leaves big enough to provide shelter. The tree is a witness in this scene. It is itself.</li>
-      <li><strong>The Thornfield drive (Scene 90).</strong> Long, lined with tall oak trees. The English landscape tradition of the country house approach, designed to perform the wealth of the family from the moment of arrival. Cold trees, bare branches, snow on the ground. The opposite of the lush Caribbean.</li>
-      <li><strong>The Sargasso Sea itself (Scenes 2, 104).</strong> Not designed in the traditional sense but worth holding in mind for the entire arc of exteriors. The sea is a presence at the very beginning and the very end of the film. It opens in deep blue with seaweed, "an undertone of a thousand voices." It returns clear and dazzling in Scene 104, the sargassum gone. The sea is the journey and the homecoming.</li>
-    </ul>
-  </div>
-</div>
-
-<!-- 10 THE CARIBBEAN: MINIMALIST ACHRONOLOGICAL -->
-
-<div class="section">
-  <div class="section-header">
-    <span class="section-number">10</span>
+    <span class="section-number">07</span>
     <h2 class="section-title">The Caribbean / <em>Minimalist, Achronological, Grounded in Period</em></h2>
     <span class="section-sub">What we strip back, what we hold, what we let breathe</span>
   </div>
   <div class="section-body">
     <p>The Caribbean section of the film is approached <strong>minimally</strong>. Not stripped of life, but stripped of excess. The Caribbean is already saturated. The vegetation is intense. The light is intense. The colours of flowers, sky, water, soil are intense. The film does not need to add to this. It needs to let it speak.</p>
-    <p>This means that interiors at <strong>Coulibri in Antoinette's childhood, before Mr Mason's repairs</strong>, at Granbois, and in domestic Caribbean spaces should feel <strong>spare, considered, with each object earning its place</strong>. We are not filling rooms. We are inhabiting them. A few precise objects, beautifully chosen, in a room that breathes. The opposite of Thornfield. The Coulibri that comes after Mason's interventions sits inside a different argument and a different chromatic register: it is the great house aggressively returned to colonial order, fuller, more imposed, more English. That post-Mason Coulibri is not the minimalism of this section. It belongs alongside Thornfield in the maximalism reading.</p>
+    <p>This means that interiors at Coulibri (after Mason's repairs), at Granbois, and in domestic Caribbean spaces should feel <strong>spare, considered, with each object earning its place</strong>. We are not filling rooms. We are inhabiting them. A few precise objects, beautifully chosen, in a room that breathes. The opposite of Thornfield.</p>
     <p>Achronological in this context means that even though the film is grounded in the post-emancipation period (1830s onward), the design can incorporate elements that feel temporally porous. An object that looks like it could be from any decade between then and now. A piece of fabric that reads as ancient and contemporary at once. A surface that has been touched by many hands across many years. The minimalism allows this temporal porousness to register. A maximalist Caribbean would lock the period in. A minimalist Caribbean lets time move through.</p>
-    <p>There is a second reading of this minimalism that I want to hold alongside the first, and the budgetary lens of our production is in fact one of the doors into it. <strong>The interiors of the film, particularly the Coulibri of Antoinette's childhood before Mr Mason arrives, and the rooms of Granbois, should feel like places that once held more.</strong> Places that have been emptied by time, by economic decline, by the slow leaving of things. Sparse not only because the Caribbean does not need decoration, but because these rooms are carrying <strong>the residue of past splendour</strong>. The mark on the wall where a painting used to hang. The lighter rectangle on the floor where a rug used to lie. The dust-line on a sideboard where something used to sit. <em>The outline of what is gone as a present visual fact.</em> The room as palimpsest, holding the memory of its former contents in negative.</p>
-    <p>This connects directly to several arguments already in the document. It is Bachelard's house remembering more than its inhabitants do. It is Cosmic Archaeology working in a single room, reading the visible architecture of a former order. It is THE MISSING surfacing as design: the disappeared made constitutive of what is visible. <strong>Hold both readings of minimalism at once.</strong> The first reading is a philosophical refusal to over-museum the world. The second reading is the visible record of a place that has been emptied. The two are not the same and they should not be flattened into each other.</p>
     <div class="double-column">
       <div class="col-theory">
         <span class="col-label">Theoretical</span>
@@ -1020,8 +741,6 @@ body::after {
       </div>
     </div>
     <ul class="threads">
-      <li><strong>Coulibri before Mr Mason's repairs (Scenes 1, 42, 44).</strong> The dilapidated childhood home, "past splendour and present dilapidation." The wild garden going to bush. The leaks that Mason will later fix. The flagstones unscrubbed. Most importantly, the rooms holding the visible outline of what is no longer in them. The lighter rectangle on a wall where a painting used to hang. The dust-line on a sideboard where something used to sit. The empty corner where a piece of furniture once stood, the floorboards still marked by it. <strong>Coulibri-before-Mason is the place where the residue of past splendour is most visible</strong>, and the design needs to make this residue legible: emptiness as a kind of presence, the architecture of what is gone. After Mason's repairs (the same Coulibri in Scenes 50 to 58) the rooms are visibly fuller and more restored, but I want a few of these residue marks to remain even there, scrubbed at but not erased. The history of the house is in what was and what is.</li>
-      <li><strong>Granbois carries the same residue quality in a different register.</strong> "An imitation of a classic English summer house" (Scene 7), inhabited only intermittently across years and slowly emptied between visits. The drawing room with its one table, two chairs, and the gilded portrait of Annette. The bedroom with its bed, dressing table, mirror, and partition. Spare not only by design but because Granbois too is a place that has had things it no longer has. Hold the same logic of outline-of-what-is-gone here, gentler than at Coulibri but present.</li>
       <li>The Granbois drawing room (Scenes 8, 51, 59, 70, 80). One table, two chairs, the candle that holds the centre, the gilded portrait of Annette. A few other pieces. Not packed. The space around the bodies has to be doing as much work as the bodies themselves.</li>
       <li>The Granbois bedroom. Bed, dressing table, mirror, the partition wall to the dressing room. Soft pale colours of fabric. The hammock outside on the veranda. Spareness allows the candles in Scene 34 to register. Spareness allows the white powder on the floor in Scene 61 to register. Spareness is what gives the love potion night its visual charge.</li>
       <li>Coulibri after Mason's repairs (Scenes 50-58). The dining room "returned to its original splendour" but, in our design, that splendour can still be restrained. The portrait of the Miller's Daughter watching. A few precise pieces of imported English furniture that feel imposed rather than belonging. The contrast with the wild garden outside is the argument.</li>
@@ -1032,11 +751,10 @@ body::after {
   </div>
 </div>
 
-<!-- 11 ENGLAND / THORNFIELD -->
-
+<!-- 08 ENGLAND / THORNFIELD -->
 <div class="section section-england">
   <div class="section-header">
-    <span class="section-number">11</span>
+    <span class="section-number">08</span>
     <h2 class="section-title">England and Thornfield / <em>Maximalism as the Greed of Empire</em></h2>
     <span class="section-sub">The visual weight of theft, the architecture of accumulation, the room that must burn</span>
   </div>
@@ -1061,26 +779,23 @@ body::after {
       <li><strong>The conqueror painting of Scene 100, as a weeping hero prop.</strong> Antoinette stops in front of one specific painting in the corridor of paintings: a conqueror on horseback holding the British flag. She stares at it unflinchingly, then deliberately knocks a candle back toward the portrait. The fire is targeted, not accidental. As the flames take the canvas, the camera goes close on the conqueror's face. <em>The oil paint of the eyes melts and runs down the face, giving the illusion that the conqueror is crying as he burns.</em> This is a precise practical effect: the painting must be designed and built so that when the flame touches it, the oil weeps in the right places. The conqueror weeps. This is one of the most loaded design beats in the film. We will need to coordinate with practical effects and possibly with a specialist painter to produce a canvas that performs this effect repeatably and reliably for shooting. The painting is itself a hero prop, a character in the beat, not a piece of dressing.</li>
       <li><strong>The corridor of paintings in Scene 100.</strong> Paintings hanging on either side as Antoinette walks through. Build out a corridor of imperial portraiture. Generals, governors, conquerors, naval heroes. The gallery of empire as Antoinette walks past it with her candle, before stopping in front of the one she has chosen.</li>
       <li><strong>The three patriline portraits in Scene 101.</strong> Old Mr Rochester, his father, his father before him. Three generations of English landowners, painted in the formal portraiture style of the late 18th and early 19th century. Heavy gilt frames. Dark backgrounds. The fathers in succession. They hang above the dining table, witnessing the burn that Antoinette begins at the tablecloth. Design these portraits with care. They are Rochester's lineage and the visible architecture of patriarchal inheritance.</li>
-      <li><strong>The grand staircase of Scene 102, lit in crimson red.</strong> Sweeping, ornate, leading up and up. Antoinette at the top, lit in deep crimson, holding one flaming torch up and out in front of her. Lady Liberty. The wall colour, banister tone, surface treatment, and material finish of the staircase all need to <strong>hold a deep crimson key without going garish</strong>. Surfaces that take coloured light cleanly. This is close work between production design and Bradford. The endless spiral staircase she runs up afterward is the inverse of this grand stair, the cramped service staircase to the attic. Two stairs in this house, one for the family and one for the servants, and Antoinette has been moved between them.</li>
+      <li><strong>The grand staircase of Scene 102, lit in crimson red.</strong> Sweeping, ornate, leading up and up. Antoinette at the top, lit in deep crimson, holding one flaming torch up and out in front of her. Lady Liberty. The wall colour, banister tone, surface treatment, and material finish of the staircase all need to <strong>hold a deep crimson key without going garish</strong>. Surfaces that take coloured light cleanly. This is close work between production design and the cinematographer. The endless spiral staircase she runs up afterward is the inverse of this grand stair, the cramped service staircase to the attic. Two stairs in this house, one for the family and one for the servants, and Antoinette has been moved between them.</li>
       <li><strong>Antoinette cloaked in red light during the burn.</strong> Antoinette's body itself becomes a chromatic site through the fire sequence. As she moves from corridor to dining room to staircase to battlements, the light cloaks her in red, and her face flickers between red and orange. This is part of how the film visualises the burn even where literal flame is not present. The materials we build into the rooms she passes through must take and hold this red light cleanly.</li>
-      <li><strong>Colour theory of the fire sequence — the burn through the registers of fire.</strong> A central design and lighting move for the end of the film. Because of practical and budgetary constraints on the scale of physical fire we can stage, we are deliberately working with <strong>red, orange, and yellow light, used abstractly, to echo the colours of fire and heighten the sense of blaze</strong>. The light is doing the work that flame would do at higher budget. This is colour theory as practical solution and as philosophical argument at once: the film is also playing with the psychology of the moment, the difference between what Antoinette perceives in scale and intensity versus the material actuality of the fire she has set. The burn lives partly in her mind, partly in the rooms, and the chromatic abstraction holds both at once. For Nora's department this means the surfaces, paint finishes, fabrics, and dressing materials in the corridor, dining room, and staircase need to be selected with their behaviour under red, orange, and yellow light fully considered. Some surfaces will read clean and saturated. Others will go muddy or muddy-orange in a way we do not want. This requires testing in prep with Bradford.</li>
-      <li><strong>The wall of fire on the battlements (Scene 103).</strong> Antoinette stands on the battlements with a line of flames behind her. On the page the line reads as orderly, but it must not feel orderly to the audience. The visual outcome must read as <strong>a wall of fire behind her, an engulfment</strong>, not a row. On the practical level the fire effects may need to be arranged with geometric discipline for safety and rigging reasons, but the camera and lighting work has to dissolve that order. This is something we will continue to build as we shape and prep the film practically. Coordination with the SFX team and Bradford essential. The intent is: fire as wall, fire as backdrop, fire as Antoinette's own honour guard, not fire as a tidy line of bonfires.</li>
-      <li><strong>The attic itself (Scenes 91-99).</strong> See Section 12 below.</li>
+      <li><strong>Colour theory of the fire sequence — the burn through the registers of fire.</strong> A central design and lighting move for the end of the film. Because of practical and budgetary constraints on the scale of physical fire we can stage, we are deliberately working with <strong>red, orange, and yellow light, used abstractly, to echo the colours of fire and heighten the sense of blaze</strong>. The light is doing the work that flame would do at higher budget. This is colour theory as practical solution and as philosophical argument at once: the film is also playing with the psychology of the moment, the difference between what Antoinette perceives in scale and intensity versus the material actuality of the fire she has set. The burn lives partly in her mind, partly in the rooms, and the chromatic abstraction holds both at once. For Nora's department this means the surfaces, paint finishes, fabrics, and dressing materials in the corridor, dining room, and staircase need to be selected with their behaviour under red, orange, and yellow light fully considered. Some surfaces will read clean and saturated. Others will go muddy or muddy-orange in a way we do not want. This requires testing in prep with the cinematographer.</li>
+      <li><strong>The wall of fire on the battlements (Scene 103).</strong> Antoinette stands on the battlements with a line of flames behind her. On the page the line reads as orderly, but it must not feel orderly to the audience. The visual outcome must read as <strong>a wall of fire behind her, an engulfment</strong>, not a row. On the practical level the fire effects may need to be arranged with geometric discipline for safety and rigging reasons, but the camera and lighting work has to dissolve that order. This is something we will continue to build as we shape and prep the film practically. Coordination with the SFX team and the cinematographer essential. The intent is: fire as wall, fire as backdrop, fire as Antoinette's own honour guard, not fire as a tidy line of bonfires.</li>
+      <li><strong>The attic itself (Scenes 91-99).</strong> See Section 09 below.</li>
       <li><strong>Daniel's home as a spectral inverse of Thornfield.</strong> Worth holding both in mind together. The "VENGEANCE IS MINE" sign in Daniel's small hot room and the patriline portraits in Thornfield's vast cold dining room are arguing with each other across the Atlantic. Daniel's blood-red tablecloth and Antoinette's red tablecloth at Thornfield are arguing too. The maximalism of Thornfield was paid for, in part, by the labour of people whose descendants live in the modesty of Daniel's home. The film makes this argument through cut and contrast, but the design should know it.</li>
       <li><strong>Cabinets of curiosities.</strong> Research the Wunderkammer tradition that fed into Victorian collecting. Botanical specimens, shells, "curiosities" from the colonies including human remains, in some appalling cases. A glass-fronted cabinet in Thornfield's drawing room or hallway with such objects, if subtly placed, would be one of the most precise statements the design can make about what this house actually is.</li>
       <li><strong>Furniture and objects from the colonies physically present in the English rooms.</strong> A piece of Caribbean mahogany furniture. A West African ceremonial object behind glass. A Taíno zemi misclassified as "primitive art" on a shelf. The colonial objects present in the English house as a quiet but specific design argument about where the wealth came from and what came back with it.</li>
-      <li><strong>Updated Scene 102 flashback footprint.</strong> A small but worth-flagging change in the latest draft of the end-fire sequence. The flashbacks in Scene 102 have been pared. Only the Tia and Antoinette beat is kept, the moment where Tia wipes Antoinette's blood and Antoinette wipes Tia's tears, the gesture of mutual repair across the wound that has divided them. The previously written flashback set pieces (Mr Mason in a ring of fire, Godfrey with machete and bible) are gone. Smaller PD footprint than the prior draft suggested. The Tia-and-Antoinette beat, however, carries more weight for being alone, and the design and dressing of the Coulibri-fire memory needs to honour it as the singular flashback in this stretch.</li>
-      <li><strong>Inspirations for Thornfield.</strong> Two specific houses are widely held to have informed Charlotte Brontë's Thornfield Hall, and we should hold both in mind during prep. <a href="http://www.nortonconyers.org.uk/" target="_blank" rel="noopener">Norton Conyers</a> in North Yorkshire, the late medieval manor with Stuart and Georgian additions where Brontë heard the legend of the madwoman confined in the attics in the previous century, and where the concealed staircase to the attics was rediscovered in 2004. And <a href="https://www.peakdistrict.gov.uk/visiting/places-to-visit/stanage-and-north-lees/north-lees-hall" target="_blank" rel="noopener">North Lees Hall</a> in Hathersage, Derbyshire, the late C16 tower house that Brontë visited in 1845 with Ellen Nussey and that is generally read as the principal architectural model for Thornfield. (Lees, in Anglo-Saxon, is field. North Lees, anagrammed, is Thornfield.) The battlemented facade, the three storeys, the spiral elm staircase, the legend of a madwoman who perished in a fire. Both houses are worth reading into for our build, less as templates and more as a way to understand the architectural and atmospheric vocabulary Brontë was drawing from when she wrote Thornfield.</li>
     </ul>
-    <div class="script-note"><p><strong>From the script (updated end-fire sequence):</strong> The Thornfield drive lined with tall oak trees (Scene 90). The welcome line of staff. Scene 100, the corridor of paintings: Antoinette stops in front of the conqueror on horseback, stares unflinchingly, knocks a candle back toward the portrait, "the oil on the canvas melts. It weeps." Scene 101, the dining room: "Gold plates, gold cutlery, gold rimmed glasses. The grand centerpiece, a line of gold candelabras holding lit candles. Three paintings hang above the table, OLD MR ROCHESTER, his father, and his father before him." Antoinette "carefully lowers her hand and lights the edge of the table cloth. Precision and intention in her movement." She walks out of the room, "her face flickers between red and orange." Scene 102, the grand staircase, "lit in a crimson red." Scene 102 flashback footprint pared in latest draft to only the Tia / Antoinette wiping-blood-and-tears beat. Scene 103, the battlements, "a line of flames stand to attention behind her" (read as wall of fire). Rochester's voice through the flames: "Bertha, please, I can't see. I can't see!!" The screen saturates, "as if shot on thermal camera. ROCHESTER is a white silhouette against a darker background. Slowly the darker background turns to white, swallowing him up. He disappears." Above her, "the expansive dark sky is filled with stars and a deep orange moon."</p></div>
+    <div class="script-note"><p><strong>From the script (updated end-fire sequence):</strong> The Thornfield drive lined with tall oak trees (Scene 90). The welcome line of staff. Scene 100, the corridor of paintings: Antoinette stops in front of the conqueror on horseback, stares unflinchingly, knocks a candle back toward the portrait, "the oil on the canvas melts. It weeps." Scene 101, the dining room: "Gold plates, gold cutlery, gold rimmed glasses. The grand centerpiece, a line of gold candelabras holding lit candles. Three paintings hang above the table, OLD MR ROCHESTER, his father, and his father before him." Antoinette "carefully lowers her hand and lights the edge of the table cloth. Precision and intention in her movement." She walks out of the room, "her face flickers between red and orange." Scene 102, the grand staircase, "lit in a crimson red." Scene 103, the battlements, "a line of flames stand to attention behind her" (read as wall of fire).</p></div>
   </div>
 </div>
 
-<!-- 12 THE ATTIC -->
-
+<!-- 09 THE ATTIC -->
 <div class="section">
   <div class="section-header">
-    <span class="section-number">12</span>
+    <span class="section-number">09</span>
     <h2 class="section-title">The Attic / <em>The Cell, the Window, the Light That Holds and Withdraws</em></h2>
     <span class="section-sub">Where Antoinette is held, and where she stops being held</span>
   </div>
@@ -1113,11 +828,55 @@ body::after {
   </div>
 </div>
 
-<!-- 13 KNOWLEDGE, FREEDOM, GENDER -->
-
+<!-- 10 THE OUTBUILDINGS AND THE WORKING WORLD -->
 <div class="section">
   <div class="section-header">
-    <span class="section-number">13</span>
+    <span class="section-number">10</span>
+    <h2 class="section-title">The Outbuildings / <em>The World the Servants Made</em></h2>
+    <span class="section-sub">Kitchens, sleeping rooms, river, what happens around and beyond the great house</span>
+  </div>
+  <div class="section-body">
+    <p>The outbuildings are the spaces of life that the great house pretends do not exist. Christophine's kitchen and adjoining sleeping room. The servants' quarters. The kitchen yard. The path to the river. These are the spaces where the actual labour of feeding, washing, clothing, healing, and raising children happens. They are also the spaces where the spiritual life of the house lives most freely, because the colonial gaze does not enter them.</p>
+    <p>Design these spaces with the same care as the great house, and probably with more love. They are where the film is most alive. Brathwaite's <em>Folk Culture of the Slaves in Jamaica</em> is the best single text for thinking about these spaces.</p>
+    <ul class="threads">
+      <li><strong>Christophine's kitchen at Granbois (Scene 26).</strong> The mortar, the calabash, the smoke escaping the doorway. Tools hung from beams. Bunches of herbs drying. A simple hearth. A clay floor. The smoke that obscures her at first when Rochester approaches. Build this space as a working kitchen that has been worked in for years, by someone who knows where everything lives.</li>
+      <li><strong>Christophine's sleeping room (Scene 45).</strong> The small adjoining room. Soft glow in the deep night. A bed. A few personal objects. A space where she rocks Young Antoinette and sings her a Caribbean lullaby. This room is the warmest space in the film. Build it that way. Things on the walls. Something hanging at the window. Soft cloth. Things that have been with her a long time.</li>
+      <li><strong>The path through the woods to Christophine's house (Scene 40).</strong> "Billowing sheets hang nearby, obscuring and mystifying her view." This is not Granbois. This is Christophine's own world. A small house with sheets drying on lines outside, a mango tree, a place where she sits on the ground with the calabash and the cigar. The architecture is informal, the line between inside and outside porous. Build this as an Afro-Caribbean domestic space rather than a colonial one.</li>
+      <li><strong>The river where the women wash linen (Scene 39).</strong> One of the most sonically and spiritually charged locations in the film. A group of women washing white linen in a river while Christophine leads a work song. The water itself becomes a percussive instrument: <strong>water drumming</strong> that builds as Antoinette approaches. The river is doing several things at once: it is the site of communal labour, the site of a spiritual rhythm that predates and survives colonial structures, and a literal sonic event. Find a river location that can hold all of this. Slow water, rocks the women can sit on or beat the linen against, light breaking through trees overhead, space enough for a group of women to be in audible relationship with each other and with the water.</li>
+      <li><strong>The river where Christophine washes herself (Scene 76).</strong> A different beat. Christophine alone. White sarong, gold jewellery. Slow ritual washing. She lowers herself underwater and screams into the water. King Tubby deep dub. This is a sacred site. The same river or a different one, but a place that holds her ritual.</li>
+      <li><strong>The outbuilding kitchen at Coulibri (Scene 45).</strong> A different kitchen, in Antoinette's childhood. Christophine and Young Antoinette in a soft glow at night. Build this as the architectural ancestor of the Granbois kitchen. The same logic, the same kind of space, an earlier version.</li>
+      <li><strong>Daniel's home (Scene 37).</strong> Already discussed in Section 01 but worth pulling forward here too. A small modest home that lives in the same spatial register as the outbuildings, even though Daniel is not a servant. His house is the rural post-emancipation Caribbean reality that Granbois pretends not to see. The grandfather clock, the corrugated wall, the "VENGEANCE IS MINE" sign, the red tablecloth. Design it as the visible truth that the great house is constantly displacing.</li>
+    </ul>
+    <div class="script-note"><p><strong>From the script:</strong> Scene 26 (Christophine's kitchen at Granbois with the mortar). Scene 39 (the river and the linen washing). Scene 40 (the path to Christophine's house, the mango tree). Scene 45 (the outbuilding at Coulibri, soft glow, the lullaby). Scene 73 (the Cook fleeing the cursed place). Scene 76 (Christophine's ritual underwater wash).</p></div>
+  </div>
+</div>
+
+<!-- 11 EXTERIORS, GARDENS, FOREST -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">11</span>
+    <h2 class="section-title">Exteriors / <em>Gardens, Forests, the Land Itself</em></h2>
+    <span class="section-sub">What the camera sees outside, what the body moves through</span>
+  </div>
+  <div class="section-body">
+    <p>The exteriors of this film are doing as much work as the interiors. The Coulibri garden, the path between the house and the village, the hidden pool, the heart of the forest, the mountain ridge Granbois sits on, the Thornfield drive lined with oaks. The exterior design is closer to landscape design and natural site management than to set construction, but it requires the same level of philosophical attention.</p>
+    <ul class="threads">
+      <li><strong>The Coulibri garden (Scene 44).</strong> Wild and overgrown. Every shade of green. Vivid red, yellow, orange flowers shimmering. Towering tree ferns. The octopus orchid (white, mauve, deep purple). Jasmine leaves Young Antoinette runs her tongue over to catch raindrops. This is the garden that has gone wild because the labour that maintained it was withdrawn after emancipation. <strong>The wildness is the truth of freedom.</strong> The wildness is not neglect. It is liberation. Research Caribbean garden plants in their wild state, particularly Jamaican mountain garden flora. Octopus orchids, flamboyant trees, jasmine, hibiscus, frangipani, allamanda. The flamboyant tree is critical: Antoinette flies home to one in the final scene.</li>
+      <li><strong>The same garden after Mason arrives.</strong> Pancake-slugs lined up along manicured flowerbeds, salt killing them. The garden returned to colonial order is the garden's death. The earlier wildness is the garden's life. Both states need to be designed.</li>
+      <li><strong>The path between Coulibri house and the surrounding land.</strong> The route Young Antoinette takes when the children chase her with their song in Scene 44. The undergrowth that scratches her legs. The light declining as she goes deeper. This is a path through the half-tamed half-wild land.</li>
+      <li><strong>The heart of the forest (Scenes 31, 32, 63, 78).</strong> The dense, dark, hostile-to-Rochester / welcoming-to-Antoinette space at the centre of the film's geography. The paved road that appears for Rochester and then vanishes. The orange flowers strewn along it. The ruined house in the distance that morphs into spectral colonial architecture. The same forest where the Atlantians walk. The same forest where Rochester digs and acquires his black mask of dirt. <strong>The forest is the place where the film's spiritual truth is most concentrated.</strong> Find a real forest location that can hold all of these registers. Light filtering down. Towering canopy. A clearing or two. Paths that can be made and unmade by the camera and the dressing.</li>
+      <li><strong>The mountain ridge Granbois sits on.</strong> "Entirely isolated high in the mountains." The relationship of house to surrounding landscape is part of the design. Granbois is an English summer house dropped into Caribbean mountain terrain. The architectural mismatch is the visible argument. <strong>Worth us going through our scouted sites and houses together to find what gets us closest to this</strong>, and considering what supplementary build or dressing might be required to push the location into the right relationship with the surrounding land.</li>
+      <li><strong>The mango tree in Scene 5.</strong> Where Rochester, Antoinette, Baptiste, and the coachman shelter from the rain. A mango tree of significant age, its leaves big enough to provide shelter. The tree is a witness in this scene. It is itself.</li>
+      <li><strong>The Thornfield drive (Scene 90).</strong> Long, lined with tall oak trees. The English landscape tradition of the country house approach, designed to perform the wealth of the family from the moment of arrival. Cold trees, bare branches, snow on the ground. The opposite of the lush Caribbean.</li>
+      <li><strong>The Sargasso Sea itself (Scenes 2, 104).</strong> Not designed in the traditional sense but worth holding in mind for the entire arc of exteriors. The sea is a presence at the very beginning and the very end of the film. It opens in deep blue with seaweed, "an undertone of a thousand voices." It returns clear and dazzling in Scene 104, the sargassum gone. The sea is the journey and the homecoming.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 12 KNOWLEDGE, FREEDOM, GENDER -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">12</span>
     <h2 class="section-title">Connective Tissue / <em>Knowledge, Freedom, Gender, Possession</em></h2>
     <span class="section-sub">The themes that run beneath every space and every object</span>
   </div>
@@ -1130,28 +889,26 @@ body::after {
   </div>
 </div>
 
-<!-- 14 MISE EN SCÈNE -->
-
+<!-- 13 MISE EN SCÈNE -->
 <div class="section">
   <div class="section-header">
-    <span class="section-number">14</span>
+    <span class="section-number">13</span>
     <h2 class="section-title">Mise en Scène / <em>The Composed Image as Argument</em></h2>
-    <span class="section-sub">Working with Bradford on the integrated frame</span>
+    <span class="section-sub">Working with the cinematographer on the integrated frame</span>
   </div>
   <div class="section-body">
-    <p>I want to name this directly because it is how I think and how Bradford and I work. <strong>Mise en scène is not just the arrangement of elements in a frame. It is the construction of a saturated material world in which every element is participating in the argument of the scene.</strong> Production design, costume, hair and makeup, lighting, blocking, sound, performance: when these are working together in the way I want them to work, the frame is doing more than recording. It is composing a world.</p>
-    <p>This means our prep conversations need to include Bradford as much as possible. The relationship between what you build and how it is lit is too important to be sequential. The same room, lit two different ways, can be two different rooms. The same wall, painted one shade off, can refuse the light Bradford wants. We need to be in shared conversation about the dominant materials and surfaces of every space, the way they will absorb or reflect light, the way the camera will move through them.</p>
+    <p>I want to name this directly because it is how I think and how the cinematographer and I work. <strong>Mise en scène is not just the arrangement of elements in a frame. It is the construction of a saturated material world in which every element is participating in the argument of the scene.</strong> Production design, costume, hair and makeup, lighting, blocking, sound, performance: when these are working together in the way I want them to work, the frame is doing more than recording. It is composing a world.</p>
+    <p>This means our prep conversations need to include the cinematographer as much as possible. The relationship between what you build and how it is lit is too important to be sequential. The same room, lit two different ways, can be two different rooms. The same wall, painted one shade off, can refuse the light the cinematographer wants. We need to be in shared conversation about the dominant materials and surfaces of every space, the way they will absorb or reflect light, the way the camera will move through them.</p>
     <p>I would like the design to think in terms of <strong>composed images</strong> rather than dressed sets. What is the dominant image this scene is composing? What are the supporting images around it? What is the colour palette in this moment, this room, this beat? What does the room have to provide so that the composition has somewhere to land?</p>
-    <p>For example, the Master of None scene (Scene 86): the composed image is Rochester alone at the head of the dining table, four other places empty, the half-plucked capon, the candles and falling moths, the cuckoo clock, the rain outside. The room is a portrait of empire's interior collapse. Every element is composing this argument. What you place on that table, the colour of the tablecloth, the height of the candelabras, the wallpaper behind, the size of the window, the species of the moths: each is participating in a single composed image. We will design that image together with Bradford.</p>
+    <p>For example, the Master of None scene (Scene 86): the composed image is Rochester alone at the head of the dining table, four other places empty, the half-plucked capon, the candles and falling moths, the cuckoo clock, the rain outside. The room is a portrait of empire's interior collapse. Every element is composing this argument. What you place on that table, the colour of the tablecloth, the height of the candelabras, the wallpaper behind, the size of the window, the species of the moths: each is participating in a single composed image. We will design that image together with the cinematographer.</p>
     <p>This is how I want every significant space in the film to be approached. Not as set decoration but as <em>composed image-making</em>.</p>
   </div>
 </div>
 
-<!-- 15 EXPERIMENTAL INVITATION -->
-
+<!-- 14 EXPERIMENTAL INVITATION -->
 <div class="section">
   <div class="section-header">
-    <span class="section-number">15</span>
+    <span class="section-number">14</span>
     <h2 class="section-title">A Note on Play / <em>The Experimental Invitation</em></h2>
     <span class="section-sub">What I want us to try, what I want us to risk</span>
   </div>
@@ -1165,12 +922,12 @@ body::after {
 <div class="divider"><span class="divider-mark">A Note on Method</span></div>
 
 <div class="closing">
-  <p>This document is more than an opener. It is the <strong>BEDROCK</strong> of the world view of this film, the place I would like all of us to be able to return to as a touchstone, the working source from which everything else extends. Anything we discuss in person is an extension of what already lives on these pages. Read it, push against it, contradict it, extend it. Share it with your team. The film will find what it needs through the work we make together in the room, on location, in prep, on set, and in the conversations that radiate outward from this orientation.</p>
+  <p>This document is more than an opener and I have come to read it as such. It is the <strong>BEDROCK</strong> of the world view of this film, the place I would like all of us to be able to return to as a touchstone, the working source from which everything else extends. Anything we discuss in person is an extension of what already lives on these pages. Read it, push against it, contradict it, extend it. Share it with your team. The film will find what it needs through the work we make together in the room, on location, in prep, on set, and in the conversations that radiate outward from this orientation.</p>
   <p>Bring the strange references. Bring the buried images. Bring the materials I have not seen before. Bring the question I have not asked. The aim is to build a world for this film that no one has built before, and that means starting from what each of us actually knows and risking the things we do not yet know how to do.</p>
 
   <div class="sign">
     <p class="name">JENN NKIRU</p>
-    <p class="date">Friday 1st May 2026</p>
+    <p class="date">Monday 27th April 2026</p>
   </div>
 </div>
 
